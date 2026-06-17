@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Arabskie Perfumy Męskie — Kompletny Przewodnik 2025</title>
+<title>Arabskie Perfumy Męskie — Kompletny Przewodnik Czerwiec 2026</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -33,6 +33,22 @@ h1 em{font-style:italic;color:var(--gold)}
 nav.sticky{position:sticky;top:0;z-index:200;background:rgba(8,6,4,.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(201,168,76,.15);display:flex;flex-wrap:wrap;justify-content:center;gap:0}
 nav.sticky a{color:var(--dim);text-decoration:none;font-size:9.5px;letter-spacing:3px;text-transform:uppercase;padding:14px 18px;border-bottom:2px solid transparent;transition:all .3s}
 nav.sticky a:hover{color:var(--gold);border-bottom-color:var(--gold)}
+
+/* ── GENDER TOGGLE ──────────────────────── */
+.gender-toggle-wrap{display:flex;justify-content:center;padding:30px 20px 4px;}
+.gender-toggle{display:inline-flex;background:var(--d2);border:1px solid rgba(201,168,76,.25);border-radius:30px;padding:4px;position:relative;}
+.gt-btn{position:relative;z-index:2;display:flex;align-items:center;gap:8px;padding:11px 32px;border-radius:26px;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--dim);cursor:pointer;transition:color .4s;background:none;border:none;font-family:'Montserrat',sans-serif;}
+.gt-btn.active{color:var(--dark);font-weight:500;}
+.gt-slider{position:absolute;top:4px;left:4px;height:calc(100% - 8px);width:calc(50% - 4px);background:linear-gradient(135deg,#E8C96A,#C9A84C);border-radius:26px;transition:transform .45s cubic-bezier(.65,0,.35,1),background .45s;z-index:1;}
+.gender-toggle[data-active="women"] .gt-slider{transform:translateX(100%);background:linear-gradient(135deg,#E8A8C6,#C97B9E);}
+
+.view-panel{display:none;}
+.view-panel.active{display:block;}
+.view-panel.active .card,
+.view-panel.active .bk-card,
+.view-panel.active .tip{animation:fadeUp .5s ease both;}
+
+.theme-women{--gold:#C97B9E;--gold-l:#E8A8C6;--gold-d:#7a3c54;}
 
 /* MAIN */
 main{max-width:1260px;margin:0 auto;padding:0 24px 100px;position:relative}
@@ -158,17 +174,27 @@ footer .fl{font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--gol
 <body>
 
 <header>
-  <span class="arabic-sub">دليل العطور العربية للرجال · 2025</span>
-  <h1>Arabskie Perfumy<br><em>Kompletny Przewodnik</em></h1>
+  <span class="arabic-sub" id="arabicSub">دليل العطور العربية للرجال · يونيو 2026</span>
+  <h1 id="mainTitle">Arabskie Perfumy<br><em>Kompletny Przewodnik</em></h1>
   <div class="gold-bar"></div>
-  <p class="tagline">Domy Perfumeryjne · Odpowiedniki · Nuty · Pora Roku · Ceny w PLN</p>
-  <div class="header-stats">
-    <div class="hs"><span class="num">20+</span><span class="lbl">Perfum arabskich</span></div>
+  <p class="tagline" id="tagline">Domy Perfumeryjne · Odpowiedniki · Nuty · Pora Roku · Ceny w PLN</p>
+  <div class="header-stats" id="headerStats">
+    <div class="hs"><span class="num">40+</span><span class="lbl">Perfum arabskich</span></div>
     <div class="hs"><span class="num">6</span><span class="lbl">Domów perfumeryjnych</span></div>
-    <div class="hs"><span class="num">20+</span><span class="lbl">Zachodnich oryginałów</span></div>
+    <div class="hs"><span class="num">40+</span><span class="lbl">Zachodnich oryginałów</span></div>
     <div class="hs"><span class="num">200 zł</span><span class="lbl">Max cena 100ml</span></div>
   </div>
 </header>
+
+<div class="gender-toggle-wrap">
+  <div class="gender-toggle" id="genderToggle" data-active="men">
+    <div class="gt-slider"></div>
+    <button class="gt-btn men active" onclick="setGender('men')">♂ Mężczyźni</button>
+    <button class="gt-btn women" onclick="setGender('women')">♀ Kobiety</button>
+  </div>
+</div>
+
+<div class="view-panel active" id="view-men">
 
 <nav class="sticky">
   <a href="#intro">Wstęp</a>
@@ -181,6 +207,7 @@ footer .fl{font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--gol
   <a href="#tabela">Tabela</a>
   <a href="#marki">Marki</a>
   <a href="#porady">Porady</a>
+  <a href="#wiek">Według Wieku</a>
 </nav>
 
 <main>
@@ -321,6 +348,68 @@ footer .fl{font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--gol
       </div>
       <div class="price">~70–100 zł / 75 ml</div>
       <div class="occ-wrap"><span class="occ oc-biu">Biuro</span><span class="occ oc-wi">Wiosna</span><span class="occ oc-la">Lato</span><span class="occ oc-ca">Casual</span></div>
+    </div>
+
+
+    <div class="card">
+      <div class="badge"><span class="dot"></span>Świeży · Klasyk Wiosny</div>
+      <div class="c-name">Fattan Pour Homme</div>
+      <div class="c-brand">Rasasi · 2018 · EDP · 50 ml</div>
+      <div class="equiv-lbl">Odpowiednik zachodni</div>
+      <div class="equiv-val">Hermès Terre d'Hermès EDT — ziemisty, zielony, wiosenny</div>
+      <div class="mg"><div class="mi"><label>Rodzina</label><span>Drzewna / Aromatyczna</span></div><div class="mi"><label>Charakter</label><span>Świeży, ziemisty, letni</span></div></div>
+      <div class="notes-wrap"><label>Nuty zapachowe</label>
+        <div class="note-rows-label">Głowowe</div><div class="notes-row"><span class="nt t">Grapefruit</span><span class="nt t">Bergamotka</span><span class="nt t">Pieprz różowy</span></div>
+        <div class="note-rows-label">Sercowe</div><div class="notes-row"><span class="nt m">Wetywer</span><span class="nt m">Cedr</span><span class="nt m">Paczula</span><span class="nt m">Konwalia</span></div>
+        <div class="note-rows-label">Bazowe</div><div class="notes-row"><span class="nt b">Oakmoss</span><span class="nt b">Benzoin</span><span class="nt b">Ambra</span></div>
+      </div>
+      <div class="bars">
+        <div class="bar-row"><span class="bl">Trwałość</span><div class="bt"><div class="bf" style="width:75%"></div></div><span class="bv">7–9h</span></div>
+        <div class="bar-row"><span class="bl">Projekcja</span><div class="bt"><div class="bf" style="width:70%"></div></div><span class="bv">Umiark.</span></div>
+        <div class="bar-row"><span class="bl">Podobień.</span><div class="bt"><div class="bf" style="width:82%"></div></div><span class="bv">82%</span></div>
+      </div>
+      <div class="price">~70–100 zł / 50 ml</div>
+      <div class="occ-wrap"><span class="occ oc-biu">Biuro</span><span class="occ oc-wi">Wiosna</span><span class="occ oc-la">Lato</span><span class="occ oc-ca">Casual</span></div>
+    </div>
+    <div class="card">
+      <div class="badge"><span class="dot"></span>Nowość 2024 · Drzewny</div>
+      <div class="c-name">Hawas Black</div>
+      <div class="c-brand">Rasasi · 2024 · EDP · 100 ml</div>
+      <div class="equiv-lbl">Odpowiednik zachodni</div>
+      <div class="equiv-val">Creed Green Irish Tweed · Chanel Antaeus — mech, drzewo</div>
+      <div class="mg"><div class="mi"><label>Rodzina</label><span>Drzewna / Mchowa</span></div><div class="mi"><label>Charakter</label><span>Elegancki, maskulinny, ciemny</span></div></div>
+      <div class="notes-wrap"><label>Nuty zapachowe</label>
+        <div class="note-rows-label">Głowowe</div><div class="notes-row"><span class="nt t">Bergamotka</span><span class="nt t">Ananas</span><span class="nt t">Grapefruit</span></div>
+        <div class="note-rows-label">Sercowe</div><div class="notes-row"><span class="nt m">Paczula</span><span class="nt m">Cedr</span></div>
+        <div class="note-rows-label">Bazowe</div><div class="notes-row"><span class="nt b">Oakmoss</span><span class="nt b">Ambra</span><span class="nt b">Piżmo</span></div>
+      </div>
+      <div class="bars">
+        <div class="bar-row"><span class="bl">Trwałość</span><div class="bt"><div class="bf" style="width:72%"></div></div><span class="bv">6–8h</span></div>
+        <div class="bar-row"><span class="bl">Projekcja</span><div class="bt"><div class="bf" style="width:75%"></div></div><span class="bv">Dobra</span></div>
+        <div class="bar-row"><span class="bl">Podobień.</span><div class="bt"><div class="bf" style="width:75%"></div></div><span class="bv">75%</span></div>
+      </div>
+      <div class="price">~100–140 zł / 100 ml</div>
+      <div class="occ-wrap"><span class="occ oc-biu">Biuro</span><span class="occ oc-je">Jesień</span><span class="occ oc-zi">Zima</span><span class="occ oc-ca">Casual</span></div>
+    </div>
+    <div class="card">
+      <div class="badge"><span class="dot"></span>Nowość 2025 · Tropikalny</div>
+      <div class="c-name">Hawas Tropical</div>
+      <div class="c-brand">Rasasi · 2025 · EDP · 100 ml</div>
+      <div class="equiv-lbl">Odpowiednik zachodni</div>
+      <div class="equiv-val">JPG Le Beau Paradise Garden — kokosowy hit lata 2025</div>
+      <div class="mg"><div class="mi"><label>Rodzina</label><span>Aromatyczna / Zielona</span></div><div class="mi"><label>Charakter</label><span>Tropikalny, kremowy, letni</span></div></div>
+      <div class="notes-wrap"><label>Nuty zapachowe</label>
+        <div class="note-rows-label">Głowowe</div><div class="notes-row"><span class="nt t">Woda kokosowa</span><span class="nt t">Liść figowy</span><span class="nt t">Imbir</span></div>
+        <div class="note-rows-label">Sercowe</div><div class="notes-row"><span class="nt m">Kokos</span><span class="nt m">Figa</span><span class="nt m">Mięta</span></div>
+        <div class="note-rows-label">Bazowe</div><div class="notes-row"><span class="nt b">Sandałowiec</span><span class="nt b">Tonka</span><span class="nt b">Piżmo</span></div>
+      </div>
+      <div class="bars">
+        <div class="bar-row"><span class="bl">Trwałość</span><div class="bt"><div class="bf" style="width:88%"></div></div><span class="bv">9–11h</span></div>
+        <div class="bar-row"><span class="bl">Projekcja</span><div class="bt"><div class="bf" style="width:85%"></div></div><span class="bv">Silna</span></div>
+        <div class="bar-row"><span class="bl">Podobień.</span><div class="bt"><div class="bf" style="width:87%"></div></div><span class="bv">87%</span></div>
+      </div>
+      <div class="price">~120–160 zł / 100 ml</div>
+      <div class="occ-wrap"><span class="occ oc-wi">Wiosna</span><span class="occ oc-la">Lato</span><span class="occ oc-ca">Casual</span><span class="occ oc-ra">Randka</span></div>
     </div>
 
   </div>
@@ -508,6 +597,189 @@ footer .fl{font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--gol
       </div>
       <div class="price">~120–160 zł / 60 ml</div>
       <div class="occ-wrap"><span class="occ oc-wie">Wieczór</span><span class="occ oc-zi">Zima</span><span class="occ oc-je">Jesień</span><span class="occ oc-ra">Randka</span></div>
+    </div>
+
+    <div class="card">
+      <div class="badge"><span class="dot"></span>Unisex · Kremowy</div>
+      <div class="c-name">Musamam White Intense</div>
+      <div class="c-brand">Lattafa · 2023 · EDP · 100 ml · Unisex</div>
+      <div class="equiv-lbl">Odpowiednik zachodni</div>
+      <div class="equiv-val">Bruno Fazzolari Gris Charnel · Versace Crystal Noir (DNA)</div>
+      <div class="mg"><div class="mi"><label>Rodzina</label><span>Orientalna / Kremowa</span></div><div class="mi"><label>Charakter</label><span>Słodki, kokosowy, zmysłowy</span></div></div>
+      <div class="notes-wrap"><label>Nuty zapachowe</label>
+        <div class="note-rows-label">Głowowe</div><div class="notes-row"><span class="nt t">Przyprawy</span><span class="nt t">Bergamotka</span><span class="nt t">Pomarańcza</span></div>
+        <div class="note-rows-label">Sercowe</div><div class="notes-row"><span class="nt m">Kokos</span><span class="nt m">Ylang Ylang</span><span class="nt m">Ambroxan</span><span class="nt m">Mahonial</span></div>
+        <div class="note-rows-label">Bazowe</div><div class="notes-row"><span class="nt b">Sandałowiec</span><span class="nt b">Piżmo</span><span class="nt b">Benzoin</span></div>
+      </div>
+      <div class="bars">
+        <div class="bar-row"><span class="bl">Trwałość</span><div class="bt"><div class="bf" style="width:80%"></div></div><span class="bv">7–10h</span></div>
+        <div class="bar-row"><span class="bl">Projekcja</span><div class="bt"><div class="bf" style="width:75%"></div></div><span class="bv">Dobra</span></div>
+        <div class="bar-row"><span class="bl">Podobień.</span><div class="bt"><div class="bf" style="width:78%"></div></div><span class="bv">78%</span></div>
+      </div>
+      <div class="price">~80–120 zł / 100 ml</div>
+      <div class="occ-wrap"><span class="occ oc-biu">Biuro</span><span class="occ oc-wi">Wiosna</span><span class="occ oc-la">Lato</span><span class="occ oc-ca">Casual</span><span class="occ oc-ra">Randka</span></div>
+    </div>
+    <div class="card">
+      <div class="badge"><span class="dot"></span>Świeży · Letni</div>
+      <div class="c-name">Fakhar Pour Homme</div>
+      <div class="c-brand">Lattafa · 2022 · EDP · 100 ml</div>
+      <div class="equiv-lbl">Odpowiednik zachodni</div>
+      <div class="equiv-val">YSL Y EDP — owocowo-aromatyczny, świeży</div>
+      <div class="mg"><div class="mi"><label>Rodzina</label><span>Aromatyczna / Owocowa</span></div><div class="mi"><label>Charakter</label><span>Świeży, letni, biurowy</span></div></div>
+      <div class="notes-wrap"><label>Nuty zapachowe</label>
+        <div class="note-rows-label">Głowowe</div><div class="notes-row"><span class="nt t">Jabłko</span><span class="nt t">Bergamotka</span><span class="nt t">Imbir</span></div>
+        <div class="note-rows-label">Sercowe</div><div class="notes-row"><span class="nt m">Lawenda</span><span class="nt m">Szałwia</span><span class="nt m">Jagody jałowca</span><span class="nt m">Geranium</span></div>
+        <div class="note-rows-label">Bazowe</div><div class="notes-row"><span class="nt b">Fava Tonka</span><span class="nt b">Cedr</span><span class="nt b">Wetywer</span><span class="nt b">Ambra</span></div>
+      </div>
+      <div class="bars">
+        <div class="bar-row"><span class="bl">Trwałość</span><div class="bt"><div class="bf" style="width:72%"></div></div><span class="bv">6–8h</span></div>
+        <div class="bar-row"><span class="bl">Projekcja</span><div class="bt"><div class="bf" style="width:70%"></div></div><span class="bv">Umiark.</span></div>
+        <div class="bar-row"><span class="bl">Podobień.</span><div class="bt"><div class="bf" style="width:80%"></div></div><span class="bv">80%</span></div>
+      </div>
+      <div class="price">~60–90 zł / 100 ml</div>
+      <div class="occ-wrap"><span class="occ oc-biu">Biuro</span><span class="occ oc-wi">Wiosna</span><span class="occ oc-la">Lato</span><span class="occ oc-ca">Casual</span></div>
+    </div>
+    <div class="card">
+      <div class="badge"><span class="dot"></span>Świeży · Ambroxan</div>
+      <div class="c-name">Maahir Legacy</div>
+      <div class="c-brand">Lattafa · 2023 · EDP · 100 ml</div>
+      <div class="equiv-lbl">Odpowiednik zachodni</div>
+      <div class="equiv-val">Parfums de Marly Sedley — czysty ambroxanowy świeżak</div>
+      <div class="mg"><div class="mi"><label>Rodzina</label><span>Świeża / Drzewna</span></div><div class="mi"><label>Charakter</label><span>Letni, czysty, nowoczesny</span></div></div>
+      <div class="notes-wrap"><label>Nuty zapachowe</label>
+        <div class="note-rows-label">Głowowe</div><div class="notes-row"><span class="nt t">Limonka</span><span class="nt t">Mięta</span><span class="nt t">Grapefruit</span><span class="nt t">Lawenda</span></div>
+        <div class="note-rows-label">Sercowe</div><div class="notes-row"><span class="nt m">Czarny pieprz</span><span class="nt m">Rozmaryn</span><span class="nt m">Jagody jałowca</span></div>
+        <div class="note-rows-label">Bazowe</div><div class="notes-row"><span class="nt b">Ambroxan</span><span class="nt b">Wetywer</span><span class="nt b">Oakmoss</span><span class="nt b">Tonka</span></div>
+      </div>
+      <div class="bars">
+        <div class="bar-row"><span class="bl">Trwałość</span><div class="bt"><div class="bf" style="width:65%"></div></div><span class="bv">5–7h</span></div>
+        <div class="bar-row"><span class="bl">Projekcja</span><div class="bt"><div class="bf" style="width:62%"></div></div><span class="bv">Umiark.</span></div>
+        <div class="bar-row"><span class="bl">Podobień.</span><div class="bt"><div class="bf" style="width:76%"></div></div><span class="bv">76%</span></div>
+      </div>
+      <div class="price">~60–90 zł / 100 ml</div>
+      <div class="occ-wrap"><span class="occ oc-biu">Biuro</span><span class="occ oc-wi">Wiosna</span><span class="occ oc-la">Lato</span><span class="occ oc-ca">Casual</span></div>
+    </div>
+    <div class="card">
+      <div class="badge"><span class="dot"></span>Tropikalny · Beast Mode</div>
+      <div class="c-name">Najdia Intense</div>
+      <div class="c-brand">Lattafa · 2024 · EDP · 100 ml</div>
+      <div class="equiv-lbl">Odpowiednik zachodni</div>
+      <div class="equiv-val">Paco Rabanne Invictus / Khadlaj Island — tropikalny potwór</div>
+      <div class="mg"><div class="mi"><label>Rodzina</label><span>Aquatyczna / Owocowa</span></div><div class="mi"><label>Charakter</label><span>Tropikalny, morski, letni</span></div></div>
+      <div class="notes-wrap"><label>Nuty zapachowe</label>
+        <div class="note-rows-label">Głowowe</div><div class="notes-row"><span class="nt t">Ananas</span><span class="nt t">Jabłko</span><span class="nt t">Mięta</span><span class="nt t">Imbir</span></div>
+        <div class="note-rows-label">Sercowe</div><div class="notes-row"><span class="nt m">Nuty morskie</span><span class="nt m">Lawenda</span><span class="nt m">Geranium</span></div>
+        <div class="note-rows-label">Bazowe</div><div class="notes-row"><span class="nt b">Sandałowiec</span><span class="nt b">Tonka</span><span class="nt b">Piżmo</span><span class="nt b">Paczula</span></div>
+      </div>
+      <div class="bars">
+        <div class="bar-row"><span class="bl">Trwałość</span><div class="bt"><div class="bf" style="width:90%"></div></div><span class="bv">10–14h</span></div>
+        <div class="bar-row"><span class="bl">Projekcja</span><div class="bt"><div class="bf" style="width:92%"></div></div><span class="bv">Beast mode</span></div>
+        <div class="bar-row"><span class="bl">Podobień.</span><div class="bt"><div class="bf" style="width:83%"></div></div><span class="bv">83%</span></div>
+      </div>
+      <div class="price">~60–90 zł / 100 ml</div>
+      <div class="occ-wrap"><span class="occ oc-wi">Wiosna</span><span class="occ oc-la">Lato</span><span class="occ oc-ca">Casual</span></div>
+    </div>
+    <div class="card">
+      <div class="badge"><span class="dot"></span>Unisex · BR540 DNA</div>
+      <div class="c-name">Ana Abiyedh Rouge</div>
+      <div class="c-brand">Lattafa · 2016 · EDP · 60 ml · Unisex</div>
+      <div class="equiv-lbl">Odpowiednik zachodni</div>
+      <div class="equiv-val">Baccarat Rouge 540 — przystępna alternatywa z DNA MFK</div>
+      <div class="mg"><div class="mi"><label>Rodzina</label><span>Drzewna / Korzenna</span></div><div class="mi"><label>Charakter</label><span>Elegancki, ambra, lekko słodki</span></div></div>
+      <div class="notes-wrap"><label>Nuty zapachowe</label>
+        <div class="note-rows-label">Głowowe</div><div class="notes-row"><span class="nt t">Gruszka Nashi</span><span class="nt t">Kumkwat</span><span class="nt t">Bergamotka</span></div>
+        <div class="note-rows-label">Sercowe</div><div class="notes-row"><span class="nt m">Karmel</span><span class="nt m">Geranium</span></div>
+        <div class="note-rows-label">Bazowe</div><div class="notes-row"><span class="nt b">Ambergris</span><span class="nt b">Piżmo</span><span class="nt b">Oakmoss</span></div>
+      </div>
+      <div class="bars">
+        <div class="bar-row"><span class="bl">Trwałość</span><div class="bt"><div class="bf" style="width:82%"></div></div><span class="bv">8–10h</span></div>
+        <div class="bar-row"><span class="bl">Projekcja</span><div class="bt"><div class="bf" style="width:72%"></div></div><span class="bv">Dobra</span></div>
+        <div class="bar-row"><span class="bl">Podobień.</span><div class="bt"><div class="bf" style="width:72%"></div></div><span class="bv">72%</span></div>
+      </div>
+      <div class="price">~40–70 zł / 60 ml</div>
+      <div class="occ-wrap"><span class="occ oc-biu">Biuro</span><span class="occ oc-ca">Casual</span><span class="occ oc-wi">Wiosna</span><span class="occ oc-je">Jesień</span></div>
+    </div>
+    <div class="card">
+      <div class="badge"><span class="dot"></span>Niszowy · LV Klon</div>
+      <div class="c-name">Ramz Gold</div>
+      <div class="c-brand">Lattafa · EDP · 100 ml · Unisex</div>
+      <div class="equiv-lbl">Odpowiednik zachodni</div>
+      <div class="equiv-val">Louis Vuitton Ombre Nomade — owocowy orientalny luksus</div>
+      <div class="mg"><div class="mi"><label>Rodzina</label><span>Orientalna / Owocowa</span></div><div class="mi"><label>Charakter</label><span>Bogaty, złożony, unisex</span></div></div>
+      <div class="notes-wrap"><label>Nuty zapachowe</label>
+        <div class="note-rows-label">Głowowe</div><div class="notes-row"><span class="nt t">Jabłko</span><span class="nt t">Brzoskwinia</span><span class="nt t">Gruszka</span><span class="nt t">Czarna porzeczka</span></div>
+        <div class="note-rows-label">Sercowe</div><div class="notes-row"><span class="nt m">Róża</span><span class="nt m">Jaśmin Sambac</span><span class="nt m">Kwiat pomarańczy</span></div>
+        <div class="note-rows-label">Bazowe</div><div class="notes-row"><span class="nt b">Sandałowiec</span><span class="nt b">Białe piżmo</span><span class="nt b">Wanilia</span><span class="nt b">Paczula</span></div>
+      </div>
+      <div class="bars">
+        <div class="bar-row"><span class="bl">Trwałość</span><div class="bt"><div class="bf" style="width:85%"></div></div><span class="bv">8–10h</span></div>
+        <div class="bar-row"><span class="bl">Projekcja</span><div class="bt"><div class="bf" style="width:78%"></div></div><span class="bv">Dobra</span></div>
+        <div class="bar-row"><span class="bl">Podobień.</span><div class="bt"><div class="bf" style="width:80%"></div></div><span class="bv">80%</span></div>
+      </div>
+      <div class="price">~60–90 zł / 100 ml</div>
+      <div class="occ-wrap"><span class="occ oc-wie">Wieczór</span><span class="occ oc-je">Jesień</span><span class="occ oc-zi">Zima</span><span class="occ oc-ra">Randka</span></div>
+    </div>
+
+
+    <div class="card">
+      <div class="badge"><span class="dot"></span>Arcydzieło 2024 · Q. Bisch</div>
+      <div class="c-name">Teriaq Intense</div>
+      <div class="c-brand">Lattafa · 2024 · EDP · 100 ml · Quentin Bisch</div>
+      <div class="equiv-lbl">Odpowiednik zachodni</div>
+      <div class="equiv-val">Kilian Angels' Share · Side Effect — boozy, korzenny, śliwkowy</div>
+      <div class="mg"><div class="mi"><label>Rodzina</label><span>Orientalna / Korzenna</span></div><div class="mi"><label>Charakter</label><span>Alkoholowy, zimowy, intensywny</span></div></div>
+      <div class="notes-wrap"><label>Nuty zapachowe</label>
+        <div class="note-rows-label">Głowowe</div><div class="notes-row"><span class="nt t">Szafran</span><span class="nt t">Bergamotka</span></div>
+        <div class="note-rows-label">Sercowe</div><div class="notes-row"><span class="nt m">Śliwkowy likier</span><span class="nt m">Cynamon</span></div>
+        <div class="note-rows-label">Bazowe</div><div class="notes-row"><span class="nt b">Ambra</span><span class="nt b">Tonka</span><span class="nt b">Benzoin</span></div>
+      </div>
+      <div class="bars">
+        <div class="bar-row"><span class="bl">Trwałość</span><div class="bt"><div class="bf" style="width:92%"></div></div><span class="bv">10–14h</span></div>
+        <div class="bar-row"><span class="bl">Projekcja</span><div class="bt"><div class="bf" style="width:95%"></div></div><span class="bv">BEAST</span></div>
+        <div class="bar-row"><span class="bl">Podobień.</span><div class="bt"><div class="bf" style="width:85%"></div></div><span class="bv">85%</span></div>
+      </div>
+      <div class="price">~90–130 zł / 100 ml</div>
+      <div class="occ-wrap"><span class="occ oc-zi">Zima</span><span class="occ oc-wie">Wieczór</span><span class="occ oc-ra">Randka</span></div>
+    </div>
+    <div class="card">
+      <div class="badge"><span class="dot"></span>Gourmand · Kawowy</div>
+      <div class="c-name">Pride Artisan Ethnique</div>
+      <div class="c-brand">Lattafa · 2024 · EDP · 100 ml</div>
+      <div class="equiv-lbl">Odpowiednik zachodni</div>
+      <div class="equiv-val">Kilian Angels' Share EDP — boozy rum, kakao, wanilia</div>
+      <div class="mg"><div class="mi"><label>Rodzina</label><span>Orientalna / Gourmand</span></div><div class="mi"><label>Charakter</label><span>Przytulny, rum, kakao</span></div></div>
+      <div class="notes-wrap"><label>Nuty zapachowe</label>
+        <div class="note-rows-label">Głowowe</div><div class="notes-row"><span class="nt t">Rum</span><span class="nt t">Cynamon</span><span class="nt t">Cukier</span></div>
+        <div class="note-rows-label">Sercowe</div><div class="notes-row"><span class="nt m">Karmel</span><span class="nt m">Kakao</span><span class="nt m">Kawa</span><span class="nt m">Oakmoss</span></div>
+        <div class="note-rows-label">Bazowe</div><div class="notes-row"><span class="nt b">Wanilia</span><span class="nt b">Tonka</span><span class="nt b">Cashmere Wood</span><span class="nt b">Labdanum</span></div>
+      </div>
+      <div class="bars">
+        <div class="bar-row"><span class="bl">Trwałość</span><div class="bt"><div class="bf" style="width:85%"></div></div><span class="bv">9–12h</span></div>
+        <div class="bar-row"><span class="bl">Projekcja</span><div class="bt"><div class="bf" style="width:80%"></div></div><span class="bv">Silna</span></div>
+        <div class="bar-row"><span class="bl">Podobień.</span><div class="bt"><div class="bf" style="width:83%"></div></div><span class="bv">83%</span></div>
+      </div>
+      <div class="price">~80–110 zł / 100 ml</div>
+      <div class="occ-wrap"><span class="occ oc-zi">Zima</span><span class="occ oc-wie">Wieczór</span><span class="occ oc-ra">Randka</span></div>
+    </div>
+    <div class="card">
+      <div class="badge"><span class="dot"></span>Kawowy · Arabski</div>
+      <div class="c-name">Khamrah Qahwa</div>
+      <div class="c-brand">Lattafa · 2023 · EDP · 100 ml</div>
+      <div class="equiv-lbl">Odpowiednik zachodni</div>
+      <div class="equiv-val">MdCI Café Tuberosa · MMargiela Replica Coffee Break</div>
+      <div class="mg"><div class="mi"><label>Rodzina</label><span>Orientalna / Kawowa</span></div><div class="mi"><label>Charakter</label><span>Kawa arabska, kardamon, dym</span></div></div>
+      <div class="notes-wrap"><label>Nuty zapachowe</label>
+        <div class="note-rows-label">Głowowe</div><div class="notes-row"><span class="nt t">Kawa arabska</span><span class="nt t">Kardamon</span><span class="nt t">Szafran</span></div>
+        <div class="note-rows-label">Sercowe</div><div class="notes-row"><span class="nt m">Dym</span><span class="nt m">Ambra</span><span class="nt m">Oud</span></div>
+        <div class="note-rows-label">Bazowe</div><div class="notes-row"><span class="nt b">Wanilia</span><span class="nt b">Piżmo</span><span class="nt b">Sandałowiec</span></div>
+      </div>
+      <div class="bars">
+        <div class="bar-row"><span class="bl">Trwałość</span><div class="bt"><div class="bf" style="width:90%"></div></div><span class="bv">10–12h</span></div>
+        <div class="bar-row"><span class="bl">Projekcja</span><div class="bt"><div class="bf" style="width:83%"></div></div><span class="bv">Silna</span></div>
+        <div class="bar-row"><span class="bl">Podobień.</span><div class="bt"><div class="bf" style="width:80%"></div></div><span class="bv">80%</span></div>
+      </div>
+      <div class="price">~80–110 zł / 100 ml</div>
+      <div class="occ-wrap"><span class="occ oc-zi">Zima</span><span class="occ oc-wie">Wieczór</span><span class="occ oc-ca">Casual</span></div>
     </div>
 
   </div>
@@ -814,6 +1086,18 @@ footer .fl{font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--gol
         <tr><td class="td-orig">Baccarat Rouge 540</td><td class="td-brand">MFK</td><td class="td-arr">→</td><td class="td-ar">Opulent Oud Extrait</td><td class="td-brand" style="color:var(--gold)">Lattafa</td><td class="td-price">~120–160 zł</td><td><span class="stars">★★★★☆</span></td><td><span class="season-tag">Jesień</span><span class="season-tag">Zima</span></td></tr>
         <tr><td class="td-orig">Parfums de Marly Pegasus</td><td class="td-brand">PdM</td><td class="td-arr">→</td><td class="td-ar">Evoke Silver For Him</td><td class="td-brand" style="color:var(--gold)">Ajmal</td><td class="td-price">~150 zł</td><td><span class="stars">★★★★★</span></td><td><span class="season-tag">Cały rok</span></td></tr>
         <tr><td class="td-orig">Chanel Allure Homme Sport</td><td class="td-brand">Chanel</td><td class="td-arr">→</td><td class="td-ar">Shuhrah Pour Homme</td><td class="td-brand" style="color:var(--gold)">Rasasi</td><td class="td-price">~70–100 zł</td><td><span class="stars">★★★★☆</span></td><td><span class="season-tag">Wiosna</span><span class="season-tag">Lato</span></td></tr>
+        <tr><td class="td-orig">YSL Y EDP</td><td class="td-brand">Yves Saint Laurent</td><td class="td-arr">→</td><td class="td-ar">Fakhar Pour Homme</td><td class="td-brand" style="color:var(--gold)">Lattafa</td><td class="td-price">~60–90 zł</td><td><span class="stars">★★★★☆</span></td><td><span class="season-tag">Wiosna</span><span class="season-tag">Lato</span></td></tr>
+        <tr><td class="td-orig">Parfums de Marly Sedley</td><td class="td-brand">PdM</td><td class="td-arr">→</td><td class="td-ar">Maahir Legacy</td><td class="td-brand" style="color:var(--gold)">Lattafa</td><td class="td-price">~60–90 zł</td><td><span class="stars">★★★★☆</span></td><td><span class="season-tag">Wiosna</span><span class="season-tag">Lato</span></td></tr>
+        <tr><td class="td-orig">Paco Rabanne Invictus</td><td class="td-brand">Paco Rabanne</td><td class="td-arr">→</td><td class="td-ar">Najdia Intense</td><td class="td-brand" style="color:var(--gold)">Lattafa</td><td class="td-price">~60–90 zł</td><td><span class="stars">★★★★★</span></td><td><span class="season-tag">Wiosna</span><span class="season-tag">Lato</span></td></tr>
+        <tr><td class="td-orig">Baccarat Rouge 540</td><td class="td-brand">MFK</td><td class="td-arr">→</td><td class="td-ar">Ana Abiyedh Rouge</td><td class="td-brand" style="color:var(--gold)">Lattafa</td><td class="td-price">~40–70 zł</td><td><span class="stars">★★★★☆</span></td><td><span class="season-tag">Cały rok</span></td></tr>
+        <tr><td class="td-orig">LV Ombre Nomade</td><td class="td-brand">Louis Vuitton</td><td class="td-arr">→</td><td class="td-ar">Ramz Gold</td><td class="td-brand" style="color:var(--gold)">Lattafa</td><td class="td-price">~60–90 zł</td><td><span class="stars">★★★★☆</span></td><td><span class="season-tag">Jesień</span><span class="season-tag">Zima</span></td></tr>
+        <tr><td class="td-orig">Gris Charnel / Crystal Noir</td><td class="td-brand">B. Fazzolari / Versace</td><td class="td-arr">→</td><td class="td-ar">Musamam White Intense</td><td class="td-brand" style="color:var(--gold)">Lattafa</td><td class="td-price">~80–120 zł</td><td><span class="stars">★★★★☆</span></td><td><span class="season-tag">Wiosna</span><span class="season-tag">Lato</span></td></tr>
+        <tr><td class="td-orig">Hermès Terre d'Hermès EDT</td><td class="td-brand">Hermès</td><td class="td-arr">→</td><td class="td-ar">Fattan Pour Homme</td><td class="td-brand" style="color:var(--gold)">Rasasi</td><td class="td-price">~70–100 zł</td><td><span class="stars">★★★★☆</span></td><td><span class="season-tag">Wiosna</span><span class="season-tag">Lato</span></td></tr>
+        <tr><td class="td-orig">Creed GIT / Chanel Antaeus</td><td class="td-brand">Creed / Chanel</td><td class="td-arr">→</td><td class="td-ar">Hawas Black</td><td class="td-brand" style="color:var(--gold)">Rasasi</td><td class="td-price">~100–140 zł</td><td><span class="stars">★★★★☆</span></td><td><span class="season-tag">Jesień</span><span class="season-tag">Zima</span></td></tr>
+        <tr><td class="td-orig">JPG Le Beau Paradise Garden</td><td class="td-brand">Jean Paul Gaultier</td><td class="td-arr">→</td><td class="td-ar">Hawas Tropical</td><td class="td-brand" style="color:var(--gold)">Rasasi</td><td class="td-price">~120–160 zł</td><td><span class="stars">★★★★★</span></td><td><span class="season-tag">Wiosna</span><span class="season-tag">Lato</span></td></tr>
+        <tr><td class="td-orig">Kilian Angels' Share</td><td class="td-brand">Kilian</td><td class="td-arr">→</td><td class="td-ar">Teriaq Intense</td><td class="td-brand" style="color:var(--gold)">Lattafa</td><td class="td-price">~90–130 zł</td><td><span class="stars">★★★★★</span></td><td><span class="season-tag">Zima</span></td></tr>
+        <tr><td class="td-orig">Kilian Angels' Share EDP</td><td class="td-brand">Kilian</td><td class="td-arr">→</td><td class="td-ar">Pride Artisan Ethnique</td><td class="td-brand" style="color:var(--gold)">Lattafa</td><td class="td-price">~80–110 zł</td><td><span class="stars">★★★★☆</span></td><td><span class="season-tag">Zima</span></td></tr>
+        <tr><td class="td-orig">MdCI Café Tuberosa / Coffee Break</td><td class="td-brand">MdCI / MM Replica</td><td class="td-arr">→</td><td class="td-ar">Khamrah Qahwa</td><td class="td-brand" style="color:var(--gold)">Lattafa</td><td class="td-price">~80–110 zł</td><td><span class="stars">★★★★☆</span></td><td><span class="season-tag">Jesień</span><span class="season-tag">Zima</span></td></tr>
       </tbody>
     </table>
   </div>
@@ -853,11 +1137,129 @@ footer .fl{font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--gol
     <div class="tip"><div class="n">1</div><h4>Dawkowanie do biura</h4><p>Arabskie zapachy są 2–3× bardziej skoncentrowane niż zachodnie. Do biura wystarczą 1–2 psiknięcia. Zbyt dużo może być przytłaczające dla współpracowników — szczególnie Asad i 9PM.</p></div>
     <div class="tip"><div class="n">2</div><h4>Maceracja butelki</h4><p>Nową butelkę arabskich perfum warto odstawić na 2–4 tygodnie bez używania. Zapachy "dojrzewają" i stają się bardziej zrównoważone. Szczególnie ważne dla Lattafy i Afnanu.</p></div>
     <div class="tip"><div class="n">3</div><h4>Próbki przed zakupem</h4><p>Wszystkie wymienione zapachy dostępne jako próbki 2 ml na Allegro (5–15 zł). Zawsze testuj na skórze przez minimum 30 minut — arabskie zapachy mocno ewoluują w czasie dry-downu.</p></div>
-    <div class="tip"><div class="n">4</div><h4>Sezonowość</h4><p>Ciężkie orientale (Asad, Khamrah, La Yuqawam) — jesień/zima. Świeże (Hawas, Qimmah, Shuhrah) — wiosna/lato. Creed klony (CDNI, L'Aventure) — cały rok z umiarem.</p></div>
-    <div class="tip"><div class="n">5</div><h4>Miejsca aplikacji</h4><p>Nadgarstki, szyja, za uszami — punkty pulsu. Nie pocieraj po aplikacji — to niszczy cząsteczki zapachowe. Aplikacja na ubranie wydłuża trwałość do 24h, ale może zostawić ślad.</p></div>
-    <div class="tip"><div class="n">6</div><h4>Gdzie kupić w Polsce</h4><p>Allegro (próbki i pełne butelki), Hebe (wybrane marki), sklepy online: Notino, douglas.pl. Unikaj podejrzanych "Dubai stocks" na Instagramie — kupuj od sprawdzonych sprzedawców.</p></div>
-    <div class="tip"><div class="n">7</div><h4>Przechowywanie</h4><p>Arabskie olejki zapachowe są wrażliwe na temperaturę i światło. Przechowuj w ciemnym, chłodnym miejscu — nie na parapecie. Sypialnia lub szafa są idealne.</p></div>
-    <div class="tip"><div class="n">8</div><h4>Moje Top 3 dla 40+</h4><p><strong style="color:var(--cream)">1. Rasasi La Yuqawam</strong> — prestiż i skórzana głębia. <strong style="color:var(--cream)">2. Ajmal Evoke Gold</strong> — biurowa elegancja. <strong style="color:var(--cream)">3. Armaf CDNI</strong> — świeżość i pewność siebie przez cały rok.</p></div>
+    <div class="tip"><div class="n">4</div><h4>Sezonowość</h4><p>Ciężkie orientale (Asad, Khamrah, Teriaq Intense) — jesień/zima. Świeże (Hawas Tropical, Najdia, Maahir Legacy) — wiosna/lato. Creed klony (CDNI, L'Aventure) — cały rok z umiarem.</p></div>
+    <div class="tip"><div class="n">5</div><h4>Miejsca aplikacji</h4><p>Nadgarstki, szyja, za uszami — punkty pulsu. Nie pocieraj po aplikacji. Aplikacja na ubranie wydłuża trwałość do 24h, ale może zostawić ślad na jasnych tkaninach.</p></div>
+    <div class="tip"><div class="n">6</div><h4>Gdzie kupić w Polsce</h4><p>Allegro (próbki i pełne butelki), Hebe (Lattafa, Afnan), Notino, douglas.pl. Unikaj podejrzanych "Dubai stocks" na Instagramie — kupuj od sprawdzonych sprzedawców z opiniami.</p></div>
+    <div class="tip"><div class="n">7</div><h4>Przechowywanie</h4><p>Arabskie olejki zapachowe są wrażliwe na temperaturę i światło. Przechowuj w ciemnym, chłodnym miejscu — nie na parapecie. Sypialnia lub szafa są idealne. Unikaj łazienki.</p></div>
+    <div class="tip"><div class="n">8</div><h4>Nowości Czerwiec 2026</h4><p>Najgorętsze premiery: <strong style="color:var(--cream)">Rasasi Hawas Tropical</strong> (hit lata), <strong style="color:var(--cream)">Lattafa Teriaq Intense</strong> (beast zimowy), <strong style="color:var(--cream)">Afnan Lynked Freedom</strong> (all-season biurowy). Warte uwagi i próbki.</p></div>
+  </div>
+</section>
+
+<!-- WEDŁUG WIEKU -->
+<section class="section" id="wiek">
+  <div class="sec-head">
+    <div class="sec-n">10</div>
+    <div class="sec-tw">
+      <p>Przewodnik Wiekowy</p>
+      <h2>Arabskie Perfumy Według Wieku</h2>
+      <div class="desc">Arabska perfumeria oferuje coś dla każdego pokolenia. Poniżej zestawienie najlepszych wyborów dla 20-, 30- i 40-latków — uwzględniające charakter, styl życia i dojrzałość gustu.</div>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:2px;">
+
+    <!-- 20-LATEK -->
+    <div style="background:var(--d2);border:1px solid rgba(201,168,76,.12);padding:32px;position:relative;overflow:hidden;">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#4a8fa0,#5ab8d0);"></div>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:52px;color:rgba(74,143,160,.2);line-height:1;margin-bottom:12px;">20+</div>
+      <div style="font-size:10px;letter-spacing:4px;text-transform:uppercase;color:#4a8fa0;margin-bottom:6px;">Dla 20-latka</div>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--cream);margin-bottom:16px;">Śmiałość · Eksperyment · Energia</div>
+      <p style="font-size:12px;color:var(--dim);margin-bottom:20px;line-height:1.7;">W wieku 20 lat gust się kształtuje. Szukaj zapachów owocowych, świeżych i dynamicznych — takich, które przyciągają uwagę i budują pierwsze wrażenie. Arabskie bestie działają tu doskonale.</p>
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <div style="background:rgba(74,143,160,.06);border:1px solid rgba(74,143,160,.2);padding:14px;">
+          <div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#4a8fa0;margin-bottom:6px;">🥇 Nr 1 — Afnan 9PM Pour Homme</div>
+          <div style="font-size:12px;color:var(--txt);">Słodki, owocowy, sexy. Bomba komplementów. Działa jak magnes na randkach i imprezach. Jeden spray wystarczy — to kwintesencja zapachu dla 20-latka.</div>
+          <div style="font-size:10px;color:var(--gold);margin-top:6px;">~80–110 zł / 100 ml</div>
+        </div>
+        <div style="background:rgba(74,143,160,.04);border:1px solid rgba(74,143,160,.12);padding:14px;">
+          <div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#4a8fa0;margin-bottom:6px;">🥈 Nr 2 — Lattafa Asad</div>
+          <div style="font-size:12px;color:var(--txt);">Korzenny, drzewny, pewny siebie. Klon Sauvage Elixir w ułamku ceny. Idealny na uczelnię i pierwsze spotkania. Trwałość niesamowita.</div>
+          <div style="font-size:10px;color:var(--gold);margin-top:6px;">~99–120 zł / 100 ml</div>
+        </div>
+        <div style="background:rgba(74,143,160,.04);border:1px solid rgba(74,143,160,.12);padding:14px;">
+          <div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#4a8fa0;margin-bottom:6px;">🥉 Nr 3 — Armaf Club de Nuit Intense Man</div>
+          <div style="font-size:12px;color:var(--txt);">Świeży, dymny, owocowy. Klon Aventus — zapach, który "wygląda drogo". Buduje wizerunek i pewność siebie bez wydawania fortuny.</div>
+          <div style="font-size:10px;color:var(--gold);margin-top:6px;">~80–120 zł / 105 ml</div>
+        </div>
+        <div style="background:rgba(74,143,160,.04);border:1px solid rgba(74,143,160,.12);padding:14px;">
+          <div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#4a8fa0;margin-bottom:6px;">+ Bonus — Lattafa Najdia Intense</div>
+          <div style="font-size:12px;color:var(--txt);">Tropikalny, letni, beast. Ideał na imprezę, plażę, wakacje. Projekcja na całą salę przez 12+ godzin. Absolutny pewniak na lato.</div>
+          <div style="font-size:10px;color:var(--gold);margin-top:6px;">~60–90 zł / 100 ml</div>
+        </div>
+      </div>
+      <div style="margin-top:18px;font-size:10px;color:var(--dim);border-top:1px solid rgba(201,168,76,.1);padding-top:12px;">
+        <strong style="color:#4a8fa0;">Rada dla 20-latka:</strong> Nie bój się intensywnych zapachów. Eksperymentuj, kup próbki różnych stylów. Unikaj zbyt drogich zakupów — gust zmienia się szybko. Arabska perfumeria to idealny plac zabaw.
+      </div>
+    </div>
+
+    <!-- 30-LATEK -->
+    <div style="background:var(--d2);border:1px solid rgba(201,168,76,.12);padding:32px;position:relative;overflow:hidden;">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#8a6a3a,#c9a84c);"></div>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:52px;color:rgba(138,106,58,.2);line-height:1;margin-bottom:12px;">30+</div>
+      <div style="font-size:10px;letter-spacing:4px;text-transform:uppercase;color:#c9a84c;margin-bottom:6px;">Dla 30-latka</div>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--cream);margin-bottom:16px;">Charakter · Styl · Równowaga</div>
+      <p style="font-size:12px;color:var(--dim);margin-bottom:20px;line-height:1.7;">30-latek wie już, czego chce. Gust dojrzewa — szukasz równowagi między świeżością a głębią. Zapachy biurowe, które robią wrażenie bez przesady, i wieczorowe, które są magnetyczne bez wulgarności.</p>
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <div style="background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.2);padding:14px;">
+          <div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:6px;">🥇 Nr 1 — Rasasi Hawas Pour Homme</div>
+          <div style="font-size:12px;color:var(--txt);">Aquatyczny, świeży, kadzidłowy. Idealny do biura i weekendów. Przystępny, elegancki, zawsze na miejscu. Klon Acqua di Giò Profumo z arabskim duszem.</div>
+          <div style="font-size:10px;color:var(--gold);margin-top:6px;">~90–130 zł / 100 ml</div>
+        </div>
+        <div style="background:rgba(201,168,76,.04);border:1px solid rgba(201,168,76,.12);padding:14px;">
+          <div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:6px;">🥈 Nr 2 — Al Haramain L'Aventure</div>
+          <div style="font-size:12px;color:var(--txt);">Świeży, dymny, drzewny. 91% podobieństwa do Creed Aventus. Zapach, który mówi "wiem co robię" — w biurze i poza nim. Cały rok.</div>
+          <div style="font-size:10px;color:var(--gold);margin-top:6px;">~90–140 zł / 100 ml</div>
+        </div>
+        <div style="background:rgba(201,168,76,.04);border:1px solid rgba(201,168,76,.12);padding:14px;">
+          <div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:6px;">🥉 Nr 3 — Lattafa Khamrah</div>
+          <div style="font-size:12px;color:var(--txt);">Rum, wanilia, drzewo — ciepły wieczorowy standard. Na randkę i wieczorne wyjście. Klon By The Fireplace/Tobacco Vanille. Zapach, który zostaje w pamięci.</div>
+          <div style="font-size:10px;color:var(--gold);margin-top:6px;">~80–110 zł / 100 ml</div>
+        </div>
+        <div style="background:rgba(201,168,76,.04);border:1px solid rgba(201,168,76,.12);padding:14px;">
+          <div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:6px;">+ Bonus — Ajmal Evoke Silver For Him</div>
+          <div style="font-size:12px;color:var(--txt);">Kremowy, waniliowy, powietrzny. Klon PdM Pegasus — elegancki i zaskakujący. Idealny gdy chcesz zabrzmieć "niszowo" bez przepłacania.</div>
+          <div style="font-size:10px;color:var(--gold);margin-top:6px;">~150 zł / 90 ml</div>
+        </div>
+      </div>
+      <div style="margin-top:18px;font-size:10px;color:var(--dim);border-top:1px solid rgba(201,168,76,.1);padding-top:12px;">
+        <strong style="color:var(--gold);">Rada dla 30-latka:</strong> Zainwestuj w 2–3 zapachy na różne okazje. Jeden biurowy (Hawas), jeden wieczorowy (Khamrah), jeden całoroczny (L'Aventure). To pełna garderoba zapachowa.
+      </div>
+    </div>
+
+    <!-- 40-LATEK -->
+    <div style="background:var(--d2);border:1px solid rgba(201,168,76,.12);padding:32px;position:relative;overflow:hidden;">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#7a3a3a,#c97070);"></div>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:52px;color:rgba(122,58,58,.2);line-height:1;margin-bottom:12px;">40+</div>
+      <div style="font-size:10px;letter-spacing:4px;text-transform:uppercase;color:#c97070;margin-bottom:6px;">Dla 40-latka</div>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--cream);margin-bottom:16px;">Prestiż · Dojrzałość · Sygnatura</div>
+      <p style="font-size:12px;color:var(--dim);margin-bottom:20px;line-height:1.7;">40-latek ma już swoją sygnatury. Szuka głębi, trwałości i wyrafinowania — zapachów, które mówią o klasie bez słów. Orientale, skórzane i drzewne kompozycje nabierają tu pełnego sensu.</p>
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <div style="background:rgba(201,112,112,.06);border:1px solid rgba(201,112,112,.2);padding:14px;">
+          <div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#c97070;margin-bottom:6px;">🥇 Nr 1 — Rasasi La Yuqawam Pour Homme</div>
+          <div style="font-size:12px;color:var(--txt);">Skórzany, korzenny, prestiżowy. Klon TF Tuscan Leather — sygnatura dojrzałego mężczyzny. 10–12h trwałości. Do biura i na ważne spotkania. Klasa bez słów.</div>
+          <div style="font-size:10px;color:var(--gold);margin-top:6px;">~137–160 zł / 75 ml</div>
+        </div>
+        <div style="background:rgba(201,112,112,.04);border:1px solid rgba(201,112,112,.12);padding:14px;">
+          <div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#c97070;margin-bottom:6px;">🥈 Nr 2 — Ajmal Evoke Gold For Him</div>
+          <div style="font-size:12px;color:var(--txt);">Pudrowy, irysowy, elegancki. Najlepszy klon Prady L'Homme (91% podobieństwa). Bezkonkurencyjny zapach biurowy — dyskretny, wyrafinowany, zapamiętywany.</div>
+          <div style="font-size:10px;color:var(--gold);margin-top:6px;">~150 zł / 90 ml</div>
+        </div>
+        <div style="background:rgba(201,112,112,.04);border:1px solid rgba(201,112,112,.12);padding:14px;">
+          <div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#c97070;margin-bottom:6px;">🥉 Nr 3 — Lattafa Teriaq Intense</div>
+          <div style="font-size:12px;color:var(--txt);">Szafran, śliwka, ambra — wieczorowy majstersztyk. Stworzony przez Quentina Bischa. Jeden spray wystarczy na cały dzień. Na zimowy wieczór absolutnie bez konkurencji.</div>
+          <div style="font-size:10px;color:var(--gold);margin-top:6px;">~90–130 zł / 100 ml</div>
+        </div>
+        <div style="background:rgba(201,112,112,.04);border:1px solid rgba(201,112,112,.12);padding:14px;">
+          <div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#c97070;margin-bottom:6px;">+ Bonus — Rasasi Dhanal Oudh Siufi</div>
+          <div style="font-size:12px;color:var(--txt);">Mineralny, ziemisty, drzewny. Klon Hermès Terre d'Hermès. Zapach, który czuć charakterem i klasą. Dla kogoś, kto wie — a nie musi tego pokazywać.</div>
+          <div style="font-size:10px;color:var(--gold);margin-top:6px;">~80–100 zł / 75 ml</div>
+        </div>
+      </div>
+      <div style="margin-top:18px;font-size:10px;color:var(--dim);border-top:1px solid rgba(201,168,76,.1);padding-top:12px;">
+        <strong style="color:#c97070;">Rada dla 40-latka:</strong> Postaw na 1–2 sygnatury, a nie kolekcję. Jeden zapach do biura (Evoke Gold), jeden wieczorowy prestiżowy (La Yuqawam lub Teriaq Intense). Jakość nad ilość.
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -866,8 +1268,702 @@ footer .fl{font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--gol
 <footer>
   <div class="gold-bar"></div>
   <p class="fl">العطور العربية للرجال</p>
-  <p>Kompletny Przewodnik Arabskich Perfum Męskich · Zestawienie 2025 · Dla Mężczyzny 40+</p>
+  <p>Kompletny Przewodnik Arabskich Perfum Męskich · Aktualizacja: Czerwiec 2026 · Dla każdego mężczyzny</p>
 </footer>
+
+</div><!-- /view-men -->
+
+<div class="view-panel theme-women" id="view-women">
+<nav class="sticky">
+  <a href="#introk">Wstęp</a>
+  <a href="#rasasik">Rasasi</a>
+  <a href="#lattafak">Lattafa</a>
+  <a href="#ajmalk">Ajmal</a>
+  <a href="#alhambrak">M. Alhambra</a>
+  <a href="#alharamaink">Al Haramain</a>
+  <a href="#tabelak">Tabela</a>
+  <a href="#markik">Marki</a>
+  <a href="#poradyk">Porady</a>
+  <a href="#wiekk">Według Wieku</a>
+</nav>
+
+<main>
+
+<!-- INTRO -->
+<section class="section" id="introk">
+  <div class="intro-box">
+    <h3>Dlaczego arabskie perfumy to najlepsza alternatywa?</h3>
+    <p>Arabska perfumeria żeńska to świat bogatszych, bardziej zmysłowych interpretacji zachodnich klasyków — różane orientale, kremowe gourmandy i intensywne kwiatowo-owocowe kompozycje, które na Zachodzie kosztowałyby kilka razy więcej. Domy jak Rasasi czy Ajmal mają dekady doświadczenia w komponowaniu zapachów na bazie oudu, ambry, szafranu i prawdziwych olejków kwiatowych.</p>
+    <p>Damskie zapachy arabskie wyróżniają się wyjątkową trwałością (8–14 godzin) oraz intensywną, ale elegancką projekcją. Dla kobiety, która ceni zmysłowe, ciepłe kompozycje z głębią — to prawdziwa rewolucja cenowa względem Diora, Tom Forda czy YSL.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════ RASASI ═══════════════════ -->
+<section class="section" id="rasasik">
+  <div class="sec-head">
+    <div class="sec-n">01</div>
+    <div class="sec-tw">
+      <p>Dom Perfumeryjny</p>
+      <h2>Rasasi</h2>
+      <div class="desc">Dubaj · Założony 1979 · Linia La Yuqawam to jedna z najbardziej cenionych damskich serii w arabskiej perfumerii — słynna z bycia najlepszym budżetowym odpowiednikiem Tom Ford Black Orchid na rynku.</div>
+    </div>
+  </div>
+
+  <div class="house-banner">
+    <div class="hb-num">R</div>
+    <div class="hb-info">
+      <h3>Rasasi Perfumes</h3>
+      <p>La Yuqawam Femme to legenda wśród klonów — gęstsza, trwalsza i tańsza wersja Black Orchid. Hawas for Her to świeższa, bardziej owocowo-kwiatowa alternatywa na każdy dzień.</p>
+      <div class="hb-tags"><span class="hb-tag">Orientalne</span><span class="hb-tag">Kwiatowe</span><span class="hb-tag">Gourmand</span><span class="hb-tag">Beast mode</span></div>
+    </div>
+  </div>
+
+  <div class="cards">
+
+    <div class="card">
+      <div class="badge"><span class="dot"></span>Kultowy · Black Orchid Klon</div>
+      <div class="c-name">La Yuqawam Femme</div>
+      <div class="c-brand">Rasasi · 2012 · EDP · 75 ml</div>
+      <div class="equiv-lbl">Odpowiednik zachodni</div>
+      <div class="equiv-val">Tom Ford Black Orchid — gęstszy, trwalszy, 1/10 ceny</div>
+      <div class="mg"><div class="mi"><label>Rodzina</label><span>Orientalna / Korzenna</span></div><div class="mi"><label>Charakter</label><span>Zmysłowy, mroczny, gęsty</span></div></div>
+      <div class="notes-wrap"><label>Nuty zapachowe</label>
+        <div class="note-rows-label">Głowowe</div><div class="notes-row"><span class="nt t">Szafran</span><span class="nt t">Malina</span><span class="nt t">Tymianek egipski</span></div>
+        <div class="note-rows-label">Sercowe</div><div class="notes-row"><span class="nt m">Cynamon</span><span class="nt m">Ylang Ylang</span><span class="nt m">Pieprz różowy</span></div>
+        <div class="note-rows-label">Bazowe</div><div class="notes-row"><span class="nt b">Sandałowiec</span><span class="nt b">Ambra</span><span class="nt b">Czarna trufla</span><span class="nt b">Paczula</span></div>
+      </div>
+      <div class="bars">
+        <div class="bar-row"><span class="bl">Trwałość</span><div class="bt"><div class="bf" style="width:92%"></div></div><span class="bv">10–12h</span></div>
+        <div class="bar-row"><span class="bl">Projekcja</span><div class="bt"><div class="bf" style="width:88%"></div></div><span class="bv">Silna</span></div>
+        <div class="bar-row"><span class="bl">Podobień.</span><div class="bt"><div class="bf" style="width:85%"></div></div><span class="bv">85%</span></div>
+      </div>
+      <div class="price">~110–150 zł / 75 ml</div>
+      <div class="occ-wrap"><span class="occ oc-wie">Wieczór</span><span class="occ oc-zi">Zima</span><span class="occ oc-je">Jesień</span><span class="occ oc-ra">Randka</span></div>
+    </div>
+
+    <div class="card">
+      <div class="badge"><span class="dot"></span>Codzienny · Owocowo-Kwiatowy</div>
+      <div class="c-name">Hawas for Her</div>
+      <div class="c-brand">Rasasi · 2015 · EDP · 100 ml · Dominique Ropion</div>
+      <div class="equiv-lbl">Odpowiednik zachodni</div>
+      <div class="equiv-val">YSL Black Opium (lżejsza wersja) · Lancôme La Vie Est Belle</div>
+      <div class="mg"><div class="mi"><label>Rodzina</label><span>Kwiatowa / Owocowa</span></div><div class="mi"><label>Charakter</label><span>Słodki, elegancki, codzienny</span></div></div>
+      <div class="notes-wrap"><label>Nuty zapachowe</label>
+        <div class="note-rows-label">Głowowe</div><div class="notes-row"><span class="nt t">Granat</span><span class="nt t">Jabłko</span><span class="nt t">Grapefruit</span></div>
+        <div class="note-rows-label">Sercowe</div><div class="notes-row"><span class="nt m">Irys</span><span class="nt m">Jaśmin Sambac</span><span class="nt m">Cytrusy</span></div>
+        <div class="note-rows-label">Bazowe</div><div class="notes-row"><span class="nt b">Praliny</span><span class="nt b">Paczula</span><span class="nt b">Wetywer</span></div>
+      </div>
+      <div class="bars">
+        <div class="bar-row"><span class="bl">Trwałość</span><div class="bt"><div class="bf" style="width:65%"></div></div><span class="bv">5–7h</span></div>
+        <div class="bar-row"><span class="bl">Projekcja</span><div class="bt"><div class="bf" style="width:62%"></div></div><span class="bv">Umiark.</span></div>
+        <div class="bar-row"><span class="bl">Podobień.</span><div class="bt"><div class="bf" style="width:78%"></div></div><span class="bv">78%</span></div>
+      </div>
+      <div class="price">~90–130 zł / 100 ml</div>
+      <div class="occ-wrap"><span class="occ oc-biu">Biuro</span><span class="occ oc-wi">Wiosna</span><span class="occ oc-ca">Casual</span></div>
+    </div>
+
+    <div class="card">
+      <div class="badge"><span class="dot"></span>Niszowy · Florientalny</div>
+      <div class="c-name">La Yuqawam Orchid Prairie</div>
+      <div class="c-brand">Rasasi · 2013 · EDP · 75 ml</div>
+      <div class="equiv-lbl">Odpowiednik zachodni</div>
+      <div class="equiv-val">Tom Ford Velvet Orchid — siostrzany, ciemniejszy klon</div>
+      <div class="mg"><div class="mi"><label>Rodzina</label><span>Oud Kwiatowy</span></div><div class="mi"><label>Charakter</label><span>Władczy, intensywny, niszowy</span></div></div>
+      <div class="notes-wrap"><label>Nuty zapachowe</label>
+        <div class="notes-row"><span class="nt t">Geranium</span><span class="nt t">Róża</span><span class="nt m">Cashmeran</span><span class="nt m">Oud</span><span class="nt m">Kumaryna</span><span class="nt b">Oud</span><span class="nt b">Piżmo</span><span class="nt b">Wanilia</span></div>
+      </div>
+      <div class="bars">
+        <div class="bar-row"><span class="bl">Trwałość</span><div class="bt"><div class="bf" style="width:95%"></div></div><span class="bv">12–14h</span></div>
+        <div class="bar-row"><span class="bl">Projekcja</span><div class="bt"><div class="bf" style="width:92%"></div></div><span class="bv">BEAST</span></div>
+        <div class="bar-row"><span class="bl">Podobień.</span><div class="bt"><div class="bf" style="width:75%"></div></div><span class="bv">75%</span></div>
+      </div>
+      <div class="price">~110–150 zł / 75 ml</div>
+      <div class="occ-wrap"><span class="occ oc-wie">Wieczór</span><span class="occ oc-zi">Zima</span><span class="occ oc-ra">Randka</span></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════ LATTAFA ═══════════════════ -->
+<section class="section" id="lattafak">
+  <div class="sec-head">
+    <div class="sec-n">02</div>
+    <div class="sec-tw">
+      <p>Dom Perfumeryjny</p>
+      <h2>Lattafa</h2>
+      <div class="desc">Dubaj · Najpopularniejszy dom dla kobiet na świecie. Seria Yara to viralowy hit social media — milionowe odsłony na TikToku, słodki gourmand floral w przystępnej cenie.</div>
+    </div>
+  </div>
+  <div class="house-banner">
+    <div class="hb-num">L</div>
+    <div class="hb-info">
+      <h3>Lattafa Perfumes</h3>
+      <p>Yara to obecnie najpopularniejszy damski zapach arabski w historii marki — porównywany do Ariana Grande Cloud. Pride i Raghba dodają głębi dla kobiet szukających czegoś bardziej orientalnego.</p>
+      <div class="hb-tags"><span class="hb-tag">Gourmand</span><span class="hb-tag">Floral Fruity</span><span class="hb-tag">Viralowe</span><span class="hb-tag">Najlepsza cena</span></div>
+    </div>
+  </div>
+  <div class="cards">
+
+    <div class="card">
+      <div class="badge"><span class="dot"></span>Viralowy Hit · TikTok</div>
+      <div class="c-name">Yara</div>
+      <div class="c-brand">Lattafa · 2019 · EDP · 100 ml</div>
+      <div class="equiv-lbl">Odpowiednik zachodni</div>
+      <div class="equiv-val">Ariana Grande Cloud — słodki, waniliowy, "ciasteczkowy"</div>
+      <div class="mg"><div class="mi"><label>Rodzina</label><span>Orientalna / Kwiatowa</span></div><div class="mi"><label>Charakter</label><span>Słodki, waniliowy, przystępny</span></div></div>
+      <div class="notes-wrap"><label>Nuty zapachowe</label>
+        <div class="note-rows-label">Głowowe</div><div class="notes-row"><span class="nt t">Gruszka</span><span class="nt t">Bergamotka</span></div>
+        <div class="note-rows-label">Sercowe</div><div class="notes-row"><span class="nt m">Orchidea</span><span class="nt m">Pomarańcza</span></div>
+        <div class="note-rows-label">Bazowe</div><div class="notes-row"><span class="nt b">Wanilia</span><span class="nt b">Sandałowiec</span><span class="nt b">Piżmo</span></div>
+      </div>
+      <div class="bars">
+        <div class="bar-row"><span class="bl">Trwałość</span><div class="bt"><div class="bf" style="width:80%"></div></div><span class="bv">8–10h</span></div>
+        <div class="bar-row"><span class="bl">Projekcja</span><div class="bt"><div class="bf" style="width:75%"></div></div><span class="bv">Dobra</span></div>
+        <div class="bar-row"><span class="bl">Podobień.</span><div class="bt"><div class="bf" style="width:78%"></div></div><span class="bv">78%</span></div>
+      </div>
+      <div class="price">~50–80 zł / 100 ml</div>
+      <div class="occ-wrap"><span class="occ oc-biu">Biuro</span><span class="occ oc-wi">Wiosna</span><span class="occ oc-ca">Casual</span><span class="occ oc-ra">Randka</span></div>
+    </div>
+
+    <div class="card">
+      <div class="badge"><span class="dot"></span>Nowość 2025 · Gourmand</div>
+      <div class="c-name">Yara Elixir</div>
+      <div class="c-brand">Lattafa · 2025 · EDP · 100 ml</div>
+      <div class="equiv-lbl">Odpowiednik zachodni</div>
+      <div class="equiv-val">Kayali Yummy Pomegranate / Marshmallow Blush — deserowy</div>
+      <div class="mg"><div class="mi"><label>Rodzina</label><span>Orientalna / Waniliowa</span></div><div class="mi"><label>Charakter</label><span>Deserowy, magnetyczny, słodki</span></div></div>
+      <div class="notes-wrap"><label>Nuty zapachowe</label>
+        <div class="note-rows-label">Głowowe</div><div class="notes-row"><span class="nt t">Truskawkowe s'mores</span><span class="nt t">Czarna porzeczka</span></div>
+        <div class="note-rows-label">Sercowe</div><div class="notes-row"><span class="nt m">Jaśmin</span><span class="nt m">Kwiat pomarańczy</span></div>
+        <div class="note-rows-label">Bazowe</div><div class="notes-row"><span class="nt b">Wanilia</span><span class="nt b">Karmel</span><span class="nt b">Ambra</span><span class="nt b">Piżmo</span></div>
+      </div>
+      <div class="bars">
+        <div class="bar-row"><span class="bl">Trwałość</span><div class="bt"><div class="bf" style="width:85%"></div></div><span class="bv">9–11h</span></div>
+        <div class="bar-row"><span class="bl">Projekcja</span><div class="bt"><div class="bf" style="width:82%"></div></div><span class="bv">Silna</span></div>
+        <div class="bar-row"><span class="bl">Podobień.</span><div class="bt"><div class="bf" style="width:80%"></div></div><span class="bv">80%</span></div>
+      </div>
+      <div class="price">~80–120 zł / 100 ml</div>
+      <div class="occ-wrap"><span class="occ oc-zi">Zima</span><span class="occ oc-wie">Wieczór</span><span class="occ oc-ra">Randka</span></div>
+    </div>
+
+    <div class="card">
+      <div class="badge"><span class="dot"></span>Letni · Owocowy</div>
+      <div class="c-name">Yara Candy</div>
+      <div class="c-brand">Lattafa · 2024 · EDP · 100 ml</div>
+      <div class="equiv-lbl">Odpowiednik zachodni</div>
+      <div class="equiv-val">Lacoste Pour Elle / Moschino Toy 2 Bubble Gum — lekki, owocowy</div>
+      <div class="mg"><div class="mi"><label>Rodzina</label><span>Kwiatowo-Owocowy Gourmand</span></div><div class="mi"><label>Charakter</label><span>Młodzieńczy, cukierkowy, letni</span></div></div>
+      <div class="notes-wrap"><label>Nuty zapachowe</label>
+        <div class="notes-row"><span class="nt t">Czarna porzeczka</span><span class="nt t">Zielona mandarynka</span><span class="nt m">Truskawkowy cukierek</span><span class="nt m">Gardenia</span><span class="nt b">Wanilia</span><span class="nt b">Piżmo</span><span class="nt b">Sandałowiec</span></div>
+      </div>
+      <div class="bars">
+        <div class="bar-row"><span class="bl">Trwałość</span><div class="bt"><div class="bf" style="width:70%"></div></div><span class="bv">6–8h</span></div>
+        <div class="bar-row"><span class="bl">Projekcja</span><div class="bt"><div class="bf" style="width:68%"></div></div><span class="bv">Umiark.</span></div>
+        <div class="bar-row"><span class="bl">Podobień.</span><div class="bt"><div class="bf" style="width:74%"></div></div><span class="bv">74%</span></div>
+      </div>
+      <div class="price">~70–100 zł / 100 ml</div>
+      <div class="occ-wrap"><span class="occ oc-wi">Wiosna</span><span class="occ oc-la">Lato</span><span class="occ oc-ca">Casual</span></div>
+    </div>
+
+    <div class="card">
+      <div class="badge"><span class="dot"></span>Unisex · Orientalny</div>
+      <div class="c-name">Raghba</div>
+      <div class="c-brand">Lattafa · EDP · 100 ml · Unisex</div>
+      <div class="equiv-lbl">Odpowiednik zachodni</div>
+      <div class="equiv-val">YSL Black Opium — boozy wanilia, oud, kadzidło</div>
+      <div class="mg"><div class="mi"><label>Rodzina</label><span>Orientalna / Waniliowa</span></div><div class="mi"><label>Charakter</label><span>Ciepły, pudrowy, zmysłowy</span></div></div>
+      <div class="notes-wrap"><label>Nuty zapachowe</label>
+        <div class="notes-row"><span class="nt t">Cukier</span><span class="nt m">Oud</span><span class="nt m">Kadzidło</span><span class="nt b">Wanilia</span><span class="nt b">Sandałowiec</span><span class="nt b">Piżmo</span></div>
+      </div>
+      <div class="bars">
+        <div class="bar-row"><span class="bl">Trwałość</span><div class="bt"><div class="bf" style="width:88%"></div></div><span class="bv">9–12h</span></div>
+        <div class="bar-row"><span class="bl">Projekcja</span><div class="bt"><div class="bf" style="width:80%"></div></div><span class="bv">Silna</span></div>
+        <div class="bar-row"><span class="bl">Podobień.</span><div class="bt"><div class="bf" style="width:76%"></div></div><span class="bv">76%</span></div>
+      </div>
+      <div class="price">~50–80 zł / 100 ml</div>
+      <div class="occ-wrap"><span class="occ oc-zi">Zima</span><span class="occ oc-je">Jesień</span><span class="occ oc-wie">Wieczór</span></div>
+    </div>
+
+    <div class="card">
+      <div class="badge"><span class="dot"></span>Premium · Damski</div>
+      <div class="c-name">Pride Artisan Ethnique (damski)</div>
+      <div class="c-brand">Lattafa · 2024 · EDP · 100 ml</div>
+      <div class="equiv-lbl">Odpowiednik zachodni</div>
+      <div class="equiv-val">Kilian Good Girl Gone Bad — boozy, kwiatowy, intensywny</div>
+      <div class="mg"><div class="mi"><label>Rodzina</label><span>Kwiatowa / Gourmand</span></div><div class="mi"><label>Charakter</label><span>Bogaty, rumowy, kwiatowy</span></div></div>
+      <div class="notes-wrap"><label>Nuty zapachowe</label>
+        <div class="notes-row"><span class="nt t">Rum</span><span class="nt t">Cynamon</span><span class="nt m">Jaśmin</span><span class="nt m">Tuberoza</span><span class="nt b">Wanilia</span><span class="nt b">Kakao</span><span class="nt b">Drzewo kaszowe</span></div>
+      </div>
+      <div class="bars">
+        <div class="bar-row"><span class="bl">Trwałość</span><div class="bt"><div class="bf" style="width:85%"></div></div><span class="bv">9–11h</span></div>
+        <div class="bar-row"><span class="bl">Projekcja</span><div class="bt"><div class="bf" style="width:80%"></div></div><span class="bv">Silna</span></div>
+        <div class="bar-row"><span class="bl">Podobień.</span><div class="bt"><div class="bf" style="width:80%"></div></div><span class="bv">80%</span></div>
+      </div>
+      <div class="price">~80–110 zł / 100 ml</div>
+      <div class="occ-wrap"><span class="occ oc-zi">Zima</span><span class="occ oc-wie">Wieczór</span><span class="occ oc-ra">Randka</span></div>
+    </div>
+
+    <div class="card">
+      <div class="badge"><span class="dot"></span>Unisex · BR540 DNA</div>
+      <div class="c-name">Ana Abiyedh Rouge</div>
+      <div class="c-brand">Lattafa · 2016 · EDP · 60 ml · Unisex</div>
+      <div class="equiv-lbl">Odpowiednik zachodni</div>
+      <div class="equiv-val">Baccarat Rouge 540 — przystępna alternatywa, kultowy blind-buy</div>
+      <div class="mg"><div class="mi"><label>Rodzina</label><span>Drzewna / Ambrowa</span></div><div class="mi"><label>Charakter</label><span>Elegancki, lekko słodki</span></div></div>
+      <div class="notes-wrap"><label>Nuty zapachowe</label>
+        <div class="notes-row"><span class="nt t">Gruszka Nashi</span><span class="nt t">Kumkwat</span><span class="nt m">Karmel</span><span class="nt m">Geranium</span><span class="nt b">Ambergris</span><span class="nt b">Piżmo</span></div>
+      </div>
+      <div class="bars">
+        <div class="bar-row"><span class="bl">Trwałość</span><div class="bt"><div class="bf" style="width:82%"></div></div><span class="bv">8–10h</span></div>
+        <div class="bar-row"><span class="bl">Projekcja</span><div class="bt"><div class="bf" style="width:72%"></div></div><span class="bv">Dobra</span></div>
+        <div class="bar-row"><span class="bl">Podobień.</span><div class="bt"><div class="bf" style="width:72%"></div></div><span class="bv">72%</span></div>
+      </div>
+      <div class="price">~40–70 zł / 60 ml</div>
+      <div class="occ-wrap"><span class="occ oc-biu">Biuro</span><span class="occ oc-ca">Casual</span><span class="occ oc-wi">Wiosna</span></div>
+    </div>
+
+    <div class="card">
+      <div class="badge"><span class="dot"></span>Viralowy 2024 · Gourmand</div>
+      <div class="c-name">Eclaire</div>
+      <div class="c-brand">Lattafa · 2024 · EDP · 100 ml</div>
+      <div class="equiv-lbl">Odpowiednik zachodni</div>
+      <div class="equiv-val">Giardini di Toscana Bianco Latte — mleczno-karmelowy, kultowy</div>
+      <div class="mg"><div class="mi"><label>Rodzina</label><span>Kwiatowo-Owocowa Gourmand</span></div><div class="mi"><label>Charakter</label><span>Słodki, mleczny, deserowy</span></div></div>
+      <div class="notes-wrap"><label>Nuty zapachowe</label>
+        <div class="note-rows-label">Głowowe</div><div class="notes-row"><span class="nt t">Karmel</span><span class="nt t">Mleko</span><span class="nt t">Cukier</span></div>
+        <div class="note-rows-label">Sercowe</div><div class="notes-row"><span class="nt m">Miód</span><span class="nt m">Białe kwiaty</span></div>
+        <div class="note-rows-label">Bazowe</div><div class="notes-row"><span class="nt b">Wanilia</span><span class="nt b">Praliny</span><span class="nt b">Piżmo</span></div>
+      </div>
+      <div class="bars">
+        <div class="bar-row"><span class="bl">Trwałość</span><div class="bt"><div class="bf" style="width:85%"></div></div><span class="bv">9–11h</span></div>
+        <div class="bar-row"><span class="bl">Projekcja</span><div class="bt"><div class="bf" style="width:80%"></div></div><span class="bv">Silna</span></div>
+        <div class="bar-row"><span class="bl">Podobień.</span><div class="bt"><div class="bf" style="width:84%"></div></div><span class="bv">84%</span></div>
+      </div>
+      <div class="price">~80–110 zł / 100 ml</div>
+      <div class="occ-wrap"><span class="occ oc-zi">Zima</span><span class="occ oc-wie">Wieczór</span><span class="occ oc-ca">Casual</span><span class="occ oc-ra">Randka</span></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════ AJMAL ═══════════════════ -->
+<section class="section" id="ajmalk">
+  <div class="sec-head">
+    <div class="sec-n">03</div>
+    <div class="sec-tw">
+      <p>Dom Perfumeryjny</p>
+      <h2>Ajmal</h2>
+      <div class="desc">Dubaj · Założony 1951 · Premium tradycja perfumeryjna. Seria Evoke i Amber Wood to flagowe damskie kompozycje — łączą zachodnią elegancję z bogactwem arabskich olejków.</div>
+    </div>
+  </div>
+  <div class="house-banner">
+    <div class="hb-num">A</div>
+    <div class="hb-info">
+      <h3>Ajmal Perfumes</h3>
+      <p>70+ lat tradycji. Evoke For Her to subtelna, kremowa interpretacja luksusowych nisz — najwyższa precyzja wykonania spośród wszystkich domów w tym przewodniku.</p>
+      <div class="hb-tags"><span class="hb-tag">Premium</span><span class="hb-tag">Kremowe</span><span class="hb-tag">Kwiatowe</span><span class="hb-tag">Tradycja</span></div>
+    </div>
+  </div>
+  <div class="cards">
+
+    <div class="card">
+      <div class="badge"><span class="dot"></span>Bestseller · Kremowy</div>
+      <div class="c-name">Evoke For Her</div>
+      <div class="c-brand">Ajmal · EDP · 75 ml</div>
+      <div class="equiv-lbl">Odpowiednik zachodni</div>
+      <div class="equiv-val">Lancôme La Vie Est Belle — irysowo-praliny, elegancki</div>
+      <div class="mg"><div class="mi"><label>Rodzina</label><span>Kwiatowa / Gourmand</span></div><div class="mi"><label>Charakter</label><span>Elegancki, kremowy, biurowy</span></div></div>
+      <div class="notes-wrap"><label>Nuty zapachowe</label>
+        <div class="notes-row"><span class="nt t">Czarna porzeczka</span><span class="nt t">Gruszka</span><span class="nt m">Irys</span><span class="nt m">Jaśmin</span><span class="nt b">Praliny</span><span class="nt b">Wanilia</span><span class="nt b">Paczula</span></div>
+      </div>
+      <div class="bars">
+        <div class="bar-row"><span class="bl">Trwałość</span><div class="bt"><div class="bf" style="width:78%"></div></div><span class="bv">7–9h</span></div>
+        <div class="bar-row"><span class="bl">Projekcja</span><div class="bt"><div class="bf" style="width:75%"></div></div><span class="bv">Dobra</span></div>
+        <div class="bar-row"><span class="bl">Podobień.</span><div class="bt"><div class="bf" style="width:84%"></div></div><span class="bv">84%</span></div>
+      </div>
+      <div class="price">~140–170 zł / 75 ml</div>
+      <div class="occ-wrap"><span class="occ oc-biu">Biuro</span><span class="occ oc-wi">Wiosna</span><span class="occ oc-ca">Casual</span></div>
+    </div>
+
+    <div class="card">
+      <div class="badge"><span class="dot"></span>Klasyk · Orientalny</div>
+      <div class="c-name">Amber Wood</div>
+      <div class="c-brand">Ajmal · EDP · 50 ml · Unisex</div>
+      <div class="equiv-lbl">Odpowiednik zachodni</div>
+      <div class="equiv-val">Tom Ford Amber Absolute — ciepły, żywiczny, bursztynowy</div>
+      <div class="mg"><div class="mi"><label>Rodzina</label><span>Drzewna / Ambrowa</span></div><div class="mi"><label>Charakter</label><span>Ciepły, balsamiczny, otulający</span></div></div>
+      <div class="notes-wrap"><label>Nuty zapachowe</label>
+        <div class="notes-row"><span class="nt t">Bergamotka</span><span class="nt m">Cynamon</span><span class="nt m">Goździki</span><span class="nt b">Ambra</span><span class="nt b">Drzewo sandałowe</span><span class="nt b">Labdanum</span></div>
+      </div>
+      <div class="bars">
+        <div class="bar-row"><span class="bl">Trwałość</span><div class="bt"><div class="bf" style="width:88%"></div></div><span class="bv">9–11h</span></div>
+        <div class="bar-row"><span class="bl">Projekcja</span><div class="bt"><div class="bf" style="width:80%"></div></div><span class="bv">Silna</span></div>
+        <div class="bar-row"><span class="bl">Podobień.</span><div class="bt"><div class="bf" style="width:79%"></div></div><span class="bv">79%</span></div>
+      </div>
+      <div class="price">~90–120 zł / 50 ml</div>
+      <div class="occ-wrap"><span class="occ oc-zi">Zima</span><span class="occ oc-je">Jesień</span><span class="occ oc-wie">Wieczór</span></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════ MAISON ALHAMBRA ═══════════════════ -->
+<section class="section" id="alhambrak">
+  <div class="sec-head">
+    <div class="sec-n">04</div>
+    <div class="sec-tw">
+      <p>Dom Perfumeryjny</p>
+      <h2>Maison Alhambra</h2>
+      <div class="desc">ZEA · Specjalista od precyzyjnych "inspired by" klonów luksusowych nisz. Deilah to jeden z najwierniejszych klonów Parfums de Marly Delina w historii arabskiej perfumerii.</div>
+    </div>
+  </div>
+  <div class="house-banner">
+    <div class="hb-num">MA</div>
+    <div class="hb-info">
+      <h3>Maison Alhambra</h3>
+      <p>Specjalizacja w klonach niszowych marek (PdM, MFK, Tom Ford). Deilah i Precious Gold to najczęściej rekomendowane pozycje w społecznościach perfumeryjnych dla kobiet.</p>
+      <div class="hb-tags"><span class="hb-tag">Niszowe klony</span><span class="hb-tag">Wysoka wierność</span><span class="hb-tag">Kwiatowe</span></div>
+    </div>
+  </div>
+  <div class="cards">
+
+    <div class="card">
+      <div class="badge"><span class="dot"></span>Legendarny Klon · PdM</div>
+      <div class="c-name">Deilah Pour Femme</div>
+      <div class="c-brand">Maison Alhambra · EDP · 100 ml</div>
+      <div class="equiv-lbl">Odpowiednik zachodni</div>
+      <div class="equiv-val">Parfums de Marly Delina — uznawany za najwierniejszy klon (1/15 ceny)</div>
+      <div class="mg"><div class="mi"><label>Rodzina</label><span>Kwiatowa / Owocowa</span></div><div class="mi"><label>Charakter</label><span>Różany, liczi, elegancki</span></div></div>
+      <div class="notes-wrap"><label>Nuty zapachowe</label>
+        <div class="notes-row"><span class="nt t">Liczi</span><span class="nt t">Rabarbar</span><span class="nt m">Róża turecka</span><span class="nt m">Peonia</span><span class="nt b">Piżmo</span><span class="nt b">Ambroxan</span></div>
+      </div>
+      <div class="bars">
+        <div class="bar-row"><span class="bl">Trwałość</span><div class="bt"><div class="bf" style="width:80%"></div></div><span class="bv">8–10h</span></div>
+        <div class="bar-row"><span class="bl">Projekcja</span><div class="bt"><div class="bf" style="width:78%"></div></div><span class="bv">Dobra</span></div>
+        <div class="bar-row"><span class="bl">Podobień.</span><div class="bt"><div class="bf" style="width:93%"></div></div><span class="bv">93%</span></div>
+      </div>
+      <div class="price">~70–100 zł / 100 ml</div>
+      <div class="occ-wrap"><span class="occ oc-biu">Biuro</span><span class="occ oc-wi">Wiosna</span><span class="occ oc-ra">Randka</span></div>
+    </div>
+
+    <div class="card">
+      <div class="badge"><span class="dot"></span>Klon · MJ Perfect</div>
+      <div class="c-name">Precious Gold</div>
+      <div class="c-brand">Maison Alhambra · EDP · 80 ml</div>
+      <div class="equiv-lbl">Odpowiednik zachodni</div>
+      <div class="equiv-val">Marc Jacobs Perfect Intense — kwiatowo-piżmowy, "spot on"</div>
+      <div class="mg"><div class="mi"><label>Rodzina</label><span>Kwiatowa / Piżmowa</span></div><div class="mi"><label>Charakter</label><span>Czysty, kwiatowy, kobiecy</span></div></div>
+      <div class="notes-wrap"><label>Nuty zapachowe</label>
+        <div class="notes-row"><span class="nt t">Bergamotka</span><span class="nt m">Konwalia</span><span class="nt m">Peonia</span><span class="nt b">Piżmo</span><span class="nt b">Ambroxan</span><span class="nt b">Drzewo</span></div>
+      </div>
+      <div class="bars">
+        <div class="bar-row"><span class="bl">Trwałość</span><div class="bt"><div class="bf" style="width:75%"></div></div><span class="bv">7–9h</span></div>
+        <div class="bar-row"><span class="bl">Projekcja</span><div class="bt"><div class="bf" style="width:74%"></div></div><span class="bv">Dobra</span></div>
+        <div class="bar-row"><span class="bl">Podobień.</span><div class="bt"><div class="bf" style="width:88%"></div></div><span class="bv">88%</span></div>
+      </div>
+      <div class="price">~60–90 zł / 80 ml</div>
+      <div class="occ-wrap"><span class="occ oc-biu">Biuro</span><span class="occ oc-wi">Wiosna</span><span class="occ oc-la">Lato</span><span class="occ oc-ca">Casual</span></div>
+    </div>
+
+    <div class="card">
+      <div class="badge"><span class="dot"></span>Klon · Kilian</div>
+      <div class="c-name">Kismet For Women</div>
+      <div class="c-brand">Maison Alhambra · EDP · 100 ml</div>
+      <div class="equiv-lbl">Odpowiednik zachodni</div>
+      <div class="equiv-val">Kilian Good Girl Gone Bad — owocowo-kwiatowy, niszowy</div>
+      <div class="mg"><div class="mi"><label>Rodzina</label><span>Kwiatowa / Owocowa</span></div><div class="mi"><label>Charakter</label><span>Soczysty, elegancki, kobiecy</span></div></div>
+      <div class="notes-wrap"><label>Nuty zapachowe</label>
+        <div class="notes-row"><span class="nt t">Mandarynka</span><span class="nt t">Bergamotka</span><span class="nt m">Tuberoza</span><span class="nt m">Jaśmin</span><span class="nt b">Piżmo</span><span class="nt b">Drzewo sandałowe</span></div>
+      </div>
+      <div class="bars">
+        <div class="bar-row"><span class="bl">Trwałość</span><div class="bt"><div class="bf" style="width:78%"></div></div><span class="bv">7–9h</span></div>
+        <div class="bar-row"><span class="bl">Projekcja</span><div class="bt"><div class="bf" style="width:76%"></div></div><span class="bv">Dobra</span></div>
+        <div class="bar-row"><span class="bl">Podobień.</span><div class="bt"><div class="bf" style="width:85%"></div></div><span class="bv">85%</span></div>
+      </div>
+      <div class="price">~70–100 zł / 100 ml</div>
+      <div class="occ-wrap"><span class="occ oc-wi">Wiosna</span><span class="occ oc-la">Lato</span><span class="occ oc-ra">Randka</span></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════ AL HARAMAIN ═══════════════════ -->
+<section class="section" id="alharamaink">
+  <div class="sec-head">
+    <div class="sec-n">05</div>
+    <div class="sec-tw">
+      <p>Dom Perfumeryjny</p>
+      <h2>Al Haramain</h2>
+      <div class="desc">Mekka, Arabia Saudyjska · Autentyczna tradycja saudyjska. Obsession to ciepły, gourmand zapach uznawany za jedną z najlepszych budżetowych alternatyw dla luksusowych orientali damskich.</div>
+    </div>
+  </div>
+  <div class="house-banner">
+    <div class="hb-num">AH</div>
+    <div class="hb-info">
+      <h3>Al Haramain Perfumes</h3>
+      <p>Mekka. Marka łączy autentyczną arabską recepturę z zachodnią strukturą zapachową. Obsession Night to przykład damskiego orientala o wysokiej trwałości i umiarkowanej cenie.</p>
+      <div class="hb-tags"><span class="hb-tag">Tradycja saudyjska</span><span class="hb-tag">Orientalne</span><span class="hb-tag">Autentyczne</span></div>
+    </div>
+  </div>
+  <div class="cards">
+
+    <div class="card">
+      <div class="badge"><span class="dot"></span>Ciepły · Gourmand</div>
+      <div class="c-name">Obsession Night</div>
+      <div class="c-brand">Al Haramain · EDP · 100 ml</div>
+      <div class="equiv-lbl">Odpowiednik zachodni</div>
+      <div class="equiv-val">Calvin Klein Obsession Night — ciemny, korzenny orientalny</div>
+      <div class="mg"><div class="mi"><label>Rodzina</label><span>Orientalna / Korzenna</span></div><div class="mi"><label>Charakter</label><span>Ciepły, zmysłowy, wieczorowy</span></div></div>
+      <div class="notes-wrap"><label>Nuty zapachowe</label>
+        <div class="notes-row"><span class="nt t">Mandarynka</span><span class="nt t">Cynamon</span><span class="nt m">Tuberoza</span><span class="nt m">Goździki</span><span class="nt b">Wanilia</span><span class="nt b">Drzewo sandałowe</span><span class="nt b">Piżmo</span></div>
+      </div>
+      <div class="bars">
+        <div class="bar-row"><span class="bl">Trwałość</span><div class="bt"><div class="bf" style="width:82%"></div></div><span class="bv">8–10h</span></div>
+        <div class="bar-row"><span class="bl">Projekcja</span><div class="bt"><div class="bf" style="width:77%"></div></div><span class="bv">Dobra</span></div>
+        <div class="bar-row"><span class="bl">Podobień.</span><div class="bt"><div class="bf" style="width:76%"></div></div><span class="bv">76%</span></div>
+      </div>
+      <div class="price">~70–100 zł / 100 ml</div>
+      <div class="occ-wrap"><span class="occ oc-zi">Zima</span><span class="occ oc-wie">Wieczór</span><span class="occ oc-ra">Randka</span></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- TABELA -->
+<section class="section" id="tabelak">
+  <div class="sec-head">
+    <div class="sec-n">06</div>
+    <div class="sec-tw">
+      <p>Kompletne Zestawienie</p>
+      <h2>Tabela Porównawcza</h2>
+      <div class="desc">Wszystkie omówione zapachy damskie w jednym miejscu — posortowane według zachodniego oryginału.</div>
+    </div>
+  </div>
+  <div class="tbl-wrap">
+    <table class="master">
+      <thead>
+        <tr><th>Oryginał zachodni</th><th>Marka oryg.</th><th></th><th>Odpowiednik arabski</th><th>Marka arabska</th><th>Cena PL</th><th>Podobień.</th><th>Pora roku</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="td-orig">Tom Ford Black Orchid</td><td class="td-brand">Tom Ford</td><td class="td-arr">→</td><td class="td-ar">La Yuqawam Femme</td><td class="td-brand" style="color:var(--gold)">Rasasi</td><td class="td-price">~110–150 zł</td><td><span class="stars">★★★★★</span></td><td><span class="season-tag">Jesień</span><span class="season-tag">Zima</span></td></tr>
+        <tr><td class="td-orig">Tom Ford Velvet Orchid</td><td class="td-brand">Tom Ford</td><td class="td-arr">→</td><td class="td-ar">La Yuqawam Orchid Prairie</td><td class="td-brand" style="color:var(--gold)">Rasasi</td><td class="td-price">~110–150 zł</td><td><span class="stars">★★★★☆</span></td><td><span class="season-tag">Zima</span></td></tr>
+        <tr><td class="td-orig">YSL Black Opium / La Vie Est Belle</td><td class="td-brand">YSL / Lancôme</td><td class="td-arr">→</td><td class="td-ar">Hawas for Her</td><td class="td-brand" style="color:var(--gold)">Rasasi</td><td class="td-price">~90–130 zł</td><td><span class="stars">★★★★☆</span></td><td><span class="season-tag">Wiosna</span></td></tr>
+        <tr><td class="td-orig">Ariana Grande Cloud</td><td class="td-brand">Ariana Grande</td><td class="td-arr">→</td><td class="td-ar">Yara</td><td class="td-brand" style="color:var(--gold)">Lattafa</td><td class="td-price">~50–80 zł</td><td><span class="stars">★★★★☆</span></td><td><span class="season-tag">Wiosna</span><span class="season-tag">Lato</span></td></tr>
+        <tr><td class="td-orig">Kayali Yummy / Marshmallow</td><td class="td-brand">Kayali</td><td class="td-arr">→</td><td class="td-ar">Yara Elixir</td><td class="td-brand" style="color:var(--gold)">Lattafa</td><td class="td-price">~80–120 zł</td><td><span class="stars">★★★★☆</span></td><td><span class="season-tag">Zima</span></td></tr>
+        <tr><td class="td-orig">YSL Black Opium</td><td class="td-brand">YSL</td><td class="td-arr">→</td><td class="td-ar">Raghba</td><td class="td-brand" style="color:var(--gold)">Lattafa</td><td class="td-price">~50–80 zł</td><td><span class="stars">★★★★☆</span></td><td><span class="season-tag">Jesień</span><span class="season-tag">Zima</span></td></tr>
+        <tr><td class="td-orig">Kilian Good Girl Gone Bad</td><td class="td-brand">Kilian</td><td class="td-arr">→</td><td class="td-ar">Pride Artisan Ethnique</td><td class="td-brand" style="color:var(--gold)">Lattafa</td><td class="td-price">~80–110 zł</td><td><span class="stars">★★★★☆</span></td><td><span class="season-tag">Zima</span></td></tr>
+        <tr><td class="td-orig">Baccarat Rouge 540</td><td class="td-brand">MFK</td><td class="td-arr">→</td><td class="td-ar">Ana Abiyedh Rouge</td><td class="td-brand" style="color:var(--gold)">Lattafa</td><td class="td-price">~40–70 zł</td><td><span class="stars">★★★★☆</span></td><td><span class="season-tag">Cały rok</span></td></tr>
+        <tr><td class="td-orig">Giardini di Toscana Bianco Latte</td><td class="td-brand">Giardini di Toscana</td><td class="td-arr">→</td><td class="td-ar">Eclaire</td><td class="td-brand" style="color:var(--gold)">Lattafa</td><td class="td-price">~80–110 zł</td><td><span class="stars">★★★★★</span></td><td><span class="season-tag">Zima</span></td></tr>
+        <tr><td class="td-orig">Lancôme La Vie Est Belle</td><td class="td-brand">Lancôme</td><td class="td-arr">→</td><td class="td-ar">Evoke For Her</td><td class="td-brand" style="color:var(--gold)">Ajmal</td><td class="td-price">~140–170 zł</td><td><span class="stars">★★★★★</span></td><td><span class="season-tag">Cały rok</span></td></tr>
+        <tr><td class="td-orig">Tom Ford Amber Absolute</td><td class="td-brand">Tom Ford</td><td class="td-arr">→</td><td class="td-ar">Amber Wood</td><td class="td-brand" style="color:var(--gold)">Ajmal</td><td class="td-price">~90–120 zł</td><td><span class="stars">★★★★☆</span></td><td><span class="season-tag">Jesień</span><span class="season-tag">Zima</span></td></tr>
+        <tr><td class="td-orig">Parfums de Marly Delina</td><td class="td-brand">PdM</td><td class="td-arr">→</td><td class="td-ar">Deilah Pour Femme</td><td class="td-brand" style="color:var(--gold)">M. Alhambra</td><td class="td-price">~70–100 zł</td><td><span class="stars">★★★★★</span></td><td><span class="season-tag">Wiosna</span></td></tr>
+        <tr><td class="td-orig">Marc Jacobs Perfect Intense</td><td class="td-brand">Marc Jacobs</td><td class="td-arr">→</td><td class="td-ar">Precious Gold</td><td class="td-brand" style="color:var(--gold)">M. Alhambra</td><td class="td-price">~60–90 zł</td><td><span class="stars">★★★★☆</span></td><td><span class="season-tag">Wiosna</span><span class="season-tag">Lato</span></td></tr>
+        <tr><td class="td-orig">Kilian Good Girl Gone Bad</td><td class="td-brand">Kilian</td><td class="td-arr">→</td><td class="td-ar">Kismet For Women</td><td class="td-brand" style="color:var(--gold)">M. Alhambra</td><td class="td-price">~70–100 zł</td><td><span class="stars">★★★★☆</span></td><td><span class="season-tag">Lato</span></td></tr>
+        <tr><td class="td-orig">CK Obsession Night</td><td class="td-brand">Calvin Klein</td><td class="td-arr">→</td><td class="td-ar">Obsession Night</td><td class="td-brand" style="color:var(--gold)">Al Haramain</td><td class="td-price">~70–100 zł</td><td><span class="stars">★★★★☆</span></td><td><span class="season-tag">Zima</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- MARKI -->
+<section class="section" id="markik">
+  <div class="sec-head">
+    <div class="sec-n">07</div>
+    <div class="sec-tw">
+      <p>Szybki Przewodnik</p>
+      <h2>Domy Perfumeryjne — Klucz</h2>
+      <div class="desc">Który dom wybrać? Krótkie streszczenie charakteru każdej marki damskiej.</div>
+    </div>
+  </div>
+  <div class="brand-key">
+    <div class="bk-card"><h4>Rasasi</h4><div class="origin">Dubaj · 1979</div><p>La Yuqawam to najlepszy klon Black Orchid na rynku. Gęste, orientalne, beast-mode trwałość. Dla kobiet kochających intensywność.</p></div>
+    <div class="bk-card"><h4>Lattafa</h4><div class="origin">Dubaj · Viralowy</div><p>Yara to fenomen TikToka. Najlepsza wartość za cenę, szeroka paleta od słodkich gourmand do ciężkich orientali.</p></div>
+    <div class="bk-card"><h4>Ajmal</h4><div class="origin">Dubaj · 1951</div><p>Premium tradycja. Evoke For Her to wyjątkowo precyzyjny, kremowy klon La Vie Est Belle — najwyższa jakość wykonania.</p></div>
+    <div class="bk-card"><h4>Maison Alhambra</h4><div class="origin">ZEA · Niszowe klony</div><p>Specjalista od PdM, MFK i Tom Forda. Deilah to być może najwierniejszy klon Delina w historii — 93% podobieństwa.</p></div>
+    <div class="bk-card"><h4>Al Haramain</h4><div class="origin">Mekka · Tradycja</div><p>Autentyczna saudyjska receptura. Obsession Night to solidny, ciepły orientalny zapach na zimowe wieczory.</p></div>
+  </div>
+</section>
+
+<!-- PORADY -->
+<section class="section" id="poradyk">
+  <div class="sec-head">
+    <div class="sec-n">08</div>
+    <div class="sec-tw">
+      <p>Praktyczny Przewodnik</p>
+      <h2>Jak Nosić Arabskie Perfumy</h2>
+      <div class="desc">Kilka zasad, które pomogą Ci najlepiej wykorzystać potencjał arabskiej perfumerii.</div>
+    </div>
+  </div>
+  <div class="tips">
+    <div class="tip"><div class="n">1</div><h4>Dawkowanie do biura</h4><p>Damskie zapachy arabskie są intensywniejsze niż zachodnie odpowiedniki. Do biura 1–2 psiknięcia wystarczą — szczególnie przy Raghbie i La Yuqawam Orchid Prairie.</p></div>
+    <div class="tip"><div class="n">2</div><h4>Maceracja butelki</h4><p>Nową butelkę warto odstawić na 2–4 tygodnie. Composycje Lattafy szczególnie "dojrzewają" — zapach staje się bardziej zrównoważony i mniej alkoholowy.</p></div>
+    <div class="tip"><div class="n">3</div><h4>Próbki przed zakupem</h4><p>Wszystkie wymienione zapachy dostępne jako próbki 2 ml na Allegro (5–15 zł). Testuj minimum 30 minut na skórze — gourmandy i orientale mocno ewoluują.</p></div>
+    <div class="tip"><div class="n">4</div><h4>Sezonowość</h4><p>Ciężkie orientale (La Yuqawam, Raghba, Obsession Night) — jesień/zima. Świeże, owocowe (Yara, Yara Candy, Precious Gold) — wiosna/lato.</p></div>
+    <div class="tip"><div class="n">5</div><h4>Miejsca aplikacji</h4><p>Nadgarstki, szyja, za uszami, włosy (delikatnie). Nie pocieraj nadgarstków po aplikacji — niszczy to strukturę zapachu i przyspiesza odparowanie.</p></div>
+    <div class="tip"><div class="n">6</div><h4>Gdzie kupić w Polsce</h4><p>Allegro (najszerszy wybór), Hebe (Lattafa, wybrane), Notino, douglas.pl. Unikaj niesprawdzonych "Dubai stocks" na Instagramie.</p></div>
+    <div class="tip"><div class="n">7</div><h4>Przechowywanie</h4><p>Trzymaj w chłodnym, ciemnym miejscu — szafa lub szuflada toaletki, nigdy na słońcu czy w łazience przy parze.</p></div>
+    <div class="tip"><div class="n">8</div><h4>Nowości Czerwiec 2026</h4><p>Najgorętsze premiery: <strong style="color:var(--cream)">Lattafa Yara Elixir</strong> (wirale na TikToku), <strong style="color:var(--cream)">Lattafa Pride Artisan Ethnique</strong> (damska wersja), <strong style="color:var(--cream)">Rasasi Hawas Tropical</strong> (unisex, hit lata).</p></div>
+  </div>
+</section>
+
+<!-- WEDŁUG WIEKU -->
+<section class="section" id="wiekk">
+  <div class="sec-head">
+    <div class="sec-n">09</div>
+    <div class="sec-tw">
+      <p>Przewodnik Wiekowy</p>
+      <h2>Arabskie Perfumy Według Wieku</h2>
+      <div class="desc">Damski gust zapachowy ewoluuje podobnie jak męski. Poniżej najlepsze wybory dla 20-, 30- i 40-latki — uwzględniające charakter, styl życia i dojrzałość gustu.</div>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:2px;">
+
+    <!-- 20-LATKA -->
+    <div style="background:var(--d2);border:1px solid rgba(201,123,158,.18);padding:32px;position:relative;overflow:hidden;">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#4a8fa0,#5ab8d0);"></div>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:52px;color:rgba(74,143,160,.2);line-height:1;margin-bottom:12px;">20+</div>
+      <div style="font-size:10px;letter-spacing:4px;text-transform:uppercase;color:#4a8fa0;margin-bottom:6px;">Dla 20-latki</div>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--cream);margin-bottom:16px;">Słodycz · Energia · Wirale</div>
+      <p style="font-size:12px;color:var(--dim);margin-bottom:20px;line-height:1.7;">W wieku 20 lat dominują zapachy słodkie, owocowe i "instagramowe". Yara to viralowy fenomen — warto zacząć właśnie tu, eksperymentując bez obaw o duże wydatki.</p>
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <div style="background:rgba(74,143,160,.06);border:1px solid rgba(74,143,160,.2);padding:14px;">
+          <div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#4a8fa0;margin-bottom:6px;">🥇 Nr 1 — Lattafa Yara</div>
+          <div style="font-size:12px;color:var(--txt);">Słodki, gruszkowo-waniliowy. Klon Ariana Grande Cloud za jedną dziesiątą ceny. Idealny zapach na studia, pierwsze randki i codzienne noszenie.</div>
+          <div style="font-size:10px;color:var(--gold);margin-top:6px;">~50–80 zł / 100 ml</div>
+        </div>
+        <div style="background:rgba(74,143,160,.04);border:1px solid rgba(74,143,160,.12);padding:14px;">
+          <div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#4a8fa0;margin-bottom:6px;">🥈 Nr 2 — Lattafa Yara Candy</div>
+          <div style="font-size:12px;color:var(--txt);">Owocowy, cukierkowy, lekki. Idealny na wiosnę/lato — świeży, nieprzytłaczający, świetny do szkoły i na uczelnię.</div>
+          <div style="font-size:10px;color:var(--gold);margin-top:6px;">~70–100 zł / 100 ml</div>
+        </div>
+        <div style="background:rgba(74,143,160,.04);border:1px solid rgba(74,143,160,.12);padding:14px;">
+          <div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#4a8fa0;margin-bottom:6px;">🥉 Nr 3 — Maison Alhambra Kismet</div>
+          <div style="font-size:12px;color:var(--txt);">Owocowo-kwiatowy, soczysty. Klon Good Girl Gone Bad — buduje wizerunek pewnej siebie kobiety bez wydawania fortuny.</div>
+          <div style="font-size:10px;color:var(--gold);margin-top:6px;">~70–100 zł / 100 ml</div>
+        </div>
+        <div style="background:rgba(74,143,160,.04);border:1px solid rgba(74,143,160,.12);padding:14px;">
+          <div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#4a8fa0;margin-bottom:6px;">+ Bonus — Lattafa Yara Elixir</div>
+          <div style="font-size:12px;color:var(--txt);">Deserowy, magnetyczny. Nowość 2025 inspirowana Kayali — idealna na imprezy i wieczorne wyjścia.</div>
+          <div style="font-size:10px;color:var(--gold);margin-top:6px;">~80–120 zł / 100 ml</div>
+        </div>
+      </div>
+      <div style="margin-top:18px;font-size:10px;color:var(--dim);border-top:1px solid rgba(201,168,76,.1);padding-top:12px;">
+        <strong style="color:#4a8fa0;">Rada dla 20-latki:</strong> Eksperymentuj swobodnie — gust się jeszcze kształtuje. Kup kilka próbek różnych stylów (słodki, owocowy, kwiatowy) zamiast inwestować w jedną drogą butelkę.
+      </div>
+    </div>
+
+    <!-- 30-LATKA -->
+    <div style="background:var(--d2);border:1px solid rgba(201,123,158,.18);padding:32px;position:relative;overflow:hidden;">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#8a6a3a,#c9a84c);"></div>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:52px;color:rgba(138,106,58,.2);line-height:1;margin-bottom:12px;">30+</div>
+      <div style="font-size:10px;letter-spacing:4px;text-transform:uppercase;color:#c9a84c;margin-bottom:6px;">Dla 30-latki</div>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--cream);margin-bottom:16px;">Elegancja · Wyrafinowanie · Balans</div>
+      <p style="font-size:12px;color:var(--dim);margin-bottom:20px;line-height:1.7;">30-latka szuka równowagi między elegancją biurową i zmysłowością wieczorową. To czas inwestycji w precyzyjne klony niszowych marek — Deilah czy Evoke For Her to idealne wybory.</p>
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <div style="background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.2);padding:14px;">
+          <div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:6px;">🥇 Nr 1 — Maison Alhambra Deilah</div>
+          <div style="font-size:12px;color:var(--txt);">93% podobieństwa do PdM Delina. Różany, liczi, elegancki. Najwierniejszy klon w tym przewodniku — działa równie dobrze w biurze, jak na randce.</div>
+          <div style="font-size:10px;color:var(--gold);margin-top:6px;">~70–100 zł / 100 ml</div>
+        </div>
+        <div style="background:rgba(201,168,76,.04);border:1px solid rgba(201,168,76,.12);padding:14px;">
+          <div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:6px;">🥈 Nr 2 — Ajmal Evoke For Her</div>
+          <div style="font-size:12px;color:var(--txt);">Kremowy klon La Vie Est Belle. Elegancki, biurowy, wyrafinowany — sygnatura kobiety, która wie czego chce.</div>
+          <div style="font-size:10px;color:var(--gold);margin-top:6px;">~140–170 zł / 75 ml</div>
+        </div>
+        <div style="background:rgba(201,168,76,.04);border:1px solid rgba(201,168,76,.12);padding:14px;">
+          <div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:6px;">🥉 Nr 3 — Lattafa Raghba</div>
+          <div style="font-size:12px;color:var(--txt);">Ciepły, oudowy, pudrowy. Klon Black Opium — na jesienno-zimowe wieczory, gdy chcesz zabrzmieć tajemniczo.</div>
+          <div style="font-size:10px;color:var(--gold);margin-top:6px;">~50–80 zł / 100 ml</div>
+        </div>
+        <div style="background:rgba(201,168,76,.04);border:1px solid rgba(201,168,76,.12);padding:14px;">
+          <div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:6px;">+ Bonus — Rasasi Hawas for Her</div>
+          <div style="font-size:12px;color:var(--txt);">Owocowo-kwiatowy, codzienny. Lżejszy odpowiednik Black Opium — sprawdza się na każdą okazję biznesową.</div>
+          <div style="font-size:10px;color:var(--gold);margin-top:6px;">~90–130 zł / 100 ml</div>
+        </div>
+      </div>
+      <div style="margin-top:18px;font-size:10px;color:var(--dim);border-top:1px solid rgba(201,168,76,.1);padding-top:12px;">
+        <strong style="color:var(--gold);">Rada dla 30-latki:</strong> Zbuduj garderobę zapachową: jeden biurowy (Deilah), jeden wieczorowy (Raghba), jeden uniwersalny premium (Evoke For Her).
+      </div>
+    </div>
+
+    <!-- 40-LATKA -->
+    <div style="background:var(--d2);border:1px solid rgba(201,123,158,.18);padding:32px;position:relative;overflow:hidden;">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#7a3a3a,#c97070);"></div>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:52px;color:rgba(122,58,58,.2);line-height:1;margin-bottom:12px;">40+</div>
+      <div style="font-size:10px;letter-spacing:4px;text-transform:uppercase;color:#c97070;margin-bottom:6px;">Dla 40-latki</div>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--cream);margin-bottom:16px;">Prestiż · Głębia · Sygnatura</div>
+      <p style="font-size:12px;color:var(--dim);margin-bottom:20px;line-height:1.7;">40-latka ma już ugruntowaną sygnaturę. Szuka zapachów o głębi i charakterze — gęstych orientali, które mówią o klasie i dojrzałości bez potrzeby udowadniania czegokolwiek.</p>
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <div style="background:rgba(201,112,112,.06);border:1px solid rgba(201,112,112,.2);padding:14px;">
+          <div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#c97070;margin-bottom:6px;">🥇 Nr 1 — Rasasi La Yuqawam Femme</div>
+          <div style="font-size:12px;color:var(--txt);">Klon Tom Ford Black Orchid — gęsty, mroczny, zmysłowy. Beast-mode trwałość 10-12h. Sygnatura kobiety, która wie, czego chce. Absolutny klasyk.</div>
+          <div style="font-size:10px;color:var(--gold);margin-top:6px;">~110–150 zł / 75 ml</div>
+        </div>
+        <div style="background:rgba(201,112,112,.04);border:1px solid rgba(201,112,112,.12);padding:14px;">
+          <div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#c97070;margin-bottom:6px;">🥈 Nr 2 — Ajmal Amber Wood</div>
+          <div style="font-size:12px;color:var(--txt);">Ciepły, balsamiczny, otulający. Klon Tom Ford Amber Absolute. Idealny na chłodne miesiące — buduje aurę luksusu i pewności siebie.</div>
+          <div style="font-size:10px;color:var(--gold);margin-top:6px;">~90–120 zł / 50 ml</div>
+        </div>
+        <div style="background:rgba(201,112,112,.04);border:1px solid rgba(201,112,112,.12);padding:14px;">
+          <div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#c97070;margin-bottom:6px;">🥉 Nr 3 — Rasasi La Yuqawam Orchid Prairie</div>
+          <div style="font-size:12px;color:var(--txt);">Władczy, oudowy klon Velvet Orchid. Beast mode (12-14h). Na wyjątkowe wieczory, gdy chcesz pozostać w pamięci na długo.</div>
+          <div style="font-size:10px;color:var(--gold);margin-top:6px;">~110–150 zł / 75 ml</div>
+        </div>
+        <div style="background:rgba(201,112,112,.04);border:1px solid rgba(201,112,112,.12);padding:14px;">
+          <div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#c97070;margin-bottom:6px;">+ Bonus — Al Haramain Obsession Night</div>
+          <div style="font-size:12px;color:var(--txt);">Korzenny, tuberozowy, ciepły. Klon CK Obsession Night — solidny, niedrogi wybór na zimowe wieczory i spotkania rodzinne.</div>
+          <div style="font-size:10px;color:var(--gold);margin-top:6px;">~70–100 zł / 100 ml</div>
+        </div>
+      </div>
+      <div style="margin-top:18px;font-size:10px;color:var(--dim);border-top:1px solid rgba(201,168,76,.1);padding-top:12px;">
+        <strong style="color:#c97070;">Rada dla 40-latki:</strong> Postaw na 1-2 sygnatury zamiast kolekcji. La Yuqawam Femme na wieczór, Evoke For Her lub Deilah na dzień. Jakość i charakter nad ilość.
+      </div>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="gold-bar"></div>
+  <p class="fl">العطور العربية للنساء</p>
+  <p>Kompletny Przewodnik Arabskich Perfum Damskich · Aktualizacja: Czerwiec 2026 · Dla każdej kobiety</p>
+</footer>
+
+</div><!-- /view-women -->
+
+<script>
+function setGender(g) {
+  document.getElementById('genderToggle').setAttribute('data-active', g);
+  document.querySelectorAll('.gt-btn').forEach(b => b.classList.remove('active'));
+  document.querySelector('.gt-btn.' + g).classList.add('active');
+  document.getElementById('view-men').classList.toggle('active', g === 'men');
+  document.getElementById('view-women').classList.toggle('active', g === 'women');
+  window.scrollTo({top: 0, behavior: 'smooth'});
+
+  if (g === 'women') {
+    document.getElementById('arabicSub').textContent = 'دليل العطور العربية للنساء · يونيو 2026';
+    document.getElementById('mainTitle').innerHTML = 'Arabskie Perfumy<br><em>Damski Przewodnik</em>';
+    document.getElementById('tagline').textContent = 'Domy Perfumeryjne · Odpowiedniki · Nuty · Pora Roku · Ceny w PLN';
+    document.getElementById('headerStats').innerHTML = `
+      <div class="hs"><span class="num">27+</span><span class="lbl">Perfum arabskich</span></div>
+      <div class="hs"><span class="num">5</span><span class="lbl">Domów perfumeryjnych</span></div>
+      <div class="hs"><span class="num">27+</span><span class="lbl">Zachodnich oryginałów</span></div>
+      <div class="hs"><span class="num">220 zł</span><span class="lbl">Max cena 100ml</span></div>`;
+  } else {
+    document.getElementById('arabicSub').textContent = 'دليل العطور العربية للرجال · يونيو 2026';
+    document.getElementById('mainTitle').innerHTML = 'Arabskie Perfumy<br><em>Kompletny Przewodnik</em>';
+    document.getElementById('tagline').textContent = 'Domy Perfumeryjne · Odpowiedniki · Nuty · Pora Roku · Ceny w PLN';
+    document.getElementById('headerStats').innerHTML = `
+      <div class="hs"><span class="num">40+</span><span class="lbl">Perfum arabskich</span></div>
+      <div class="hs"><span class="num">6</span><span class="lbl">Domów perfumeryjnych</span></div>
+      <div class="hs"><span class="num">40+</span><span class="lbl">Zachodnich oryginałów</span></div>
+      <div class="hs"><span class="num">200 zł</span><span class="lbl">Max cena 100ml</span></div>`;
+  }
+}
+</script>
 
 </body>
 </html>
